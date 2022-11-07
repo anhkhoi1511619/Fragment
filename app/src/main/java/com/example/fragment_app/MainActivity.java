@@ -218,7 +218,8 @@ public class MainActivity extends AppCompatActivity {
         Fragment6 fragment6 = (Fragment6) fragmentManager.findFragmentById(R.id.frame_layout6);
         Fragment7 fragment7 = (Fragment7) fragmentManager.findFragmentById(R.id.frame_layout7);
         Fragment8 fragment8 = (Fragment8) fragmentManager.findFragmentById(R.id.frame_layout8);
-        OtherFragment otherFragment = (OtherFragment)  fragmentManager.findFragmentById(R.id.frame_other_layout);
+        //
+        OtherFragment otherFragment = (OtherFragment) fragmentManager.findFragmentById(R.id.frame_other_layout);
 
         LecipFragmentManager.setFragment1(fragment1);
         LecipFragmentManager.setFragment2(fragment2);

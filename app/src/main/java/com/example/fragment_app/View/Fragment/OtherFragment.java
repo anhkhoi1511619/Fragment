@@ -46,9 +46,9 @@ public class OtherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        other = ContactModel.createContactsList(20);
-        adapter = new OtherAdapter(other);
-        rvOtherRecycleView.setAdapter(adapter);
+//        other = ContactModel.createContactsList(20);
+//        adapter = new OtherAdapter(other);
+//        rvOtherRecycleView.setAdapter(adapter);
         myOtherButton = inflater.inflate(R.layout.fragment_other, container, false);
         rvOtherRecycleView.findViewById(R.id.frame_other_layout);
         rvOtherRecycleView.setHasFixedSize(true);
