@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         //Dummy Data
         int[] arrayFragment = createNewArrayFragment(5);
         setFragmentInstance();
-//        commonFragment();
 
         Button removeBtn = (Button) findViewById(R.id.btn_remove);
         removeBtn.setOnClickListener(new View.OnClickListener() {
@@ -201,35 +200,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    private void commonFragment() {
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//
-//        Fragment1 fragment1 = LecipFragmentManager.getFragment1();
-//        fragmentTransaction.show(fragment1);
-//
-//        Fragment2 fragment2 = LecipFragmentManager.getFragment2();
-//        fragmentTransaction.show(fragment2);
-//
-//        Fragment3 fragment3 = LecipFragmentManager.getFragment3();
-//        fragmentTransaction.show(fragment3);
-//
-//        Fragment4 fragment4 = LecipFragmentManager.getFragment4();
-//        fragmentTransaction.show(fragment4);
-//
-//        Fragment5 fragment5 = LecipFragmentManager.getFragment5();
-//        fragmentTransaction.show(fragment5);
-//
-//        Fragment6 fragment6 = LecipFragmentManager.getFragment6();
-//        fragmentTransaction.show(fragment6);
-//
-//        Fragment7 fragment7 = LecipFragmentManager.getFragment7();
-//        fragmentTransaction.hide(fragment7);
-//
-//        Fragment8 fragment8 = LecipFragmentManager.getFragment8();
-//        fragmentTransaction.hide(fragment8);
-//
-//        fragmentTransaction.commit();
-//
-//    }
 }
