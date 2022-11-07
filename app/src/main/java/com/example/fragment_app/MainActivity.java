@@ -4,19 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.fragment_app.Fragment.Fragment1;
-import com.example.fragment_app.Fragment.Fragment2;
-import com.example.fragment_app.Fragment.Fragment3;
-import com.example.fragment_app.Fragment.Fragment4;
-import com.example.fragment_app.Fragment.Fragment5;
-import com.example.fragment_app.Fragment.Fragment6;
-import com.example.fragment_app.Fragment.Fragment7;
-import com.example.fragment_app.Fragment.Fragment8;
-import com.example.fragment_app.Fragment.LecipFragmentManager;
+import com.example.fragment_app.View.Fragment.Fragment1;
+import com.example.fragment_app.View.Fragment.Fragment2;
+import com.example.fragment_app.View.Fragment.Fragment3;
+import com.example.fragment_app.View.Fragment.Fragment4;
+import com.example.fragment_app.View.Fragment.Fragment5;
+import com.example.fragment_app.View.Fragment.Fragment6;
+import com.example.fragment_app.View.Fragment.Fragment7;
+import com.example.fragment_app.View.Fragment.Fragment8;
+import com.example.fragment_app.View.Fragment.LecipFragmentManager;
+import com.example.fragment_app.View.Fragment.OtherFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,11 +47,30 @@ public class MainActivity extends AppCompatActivity {
         addAllBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clickAllFragmentBtn();
+//                clickAllFragmentBtn();
+                clickDisListBtn();
             }
         });
 
+//        Button disListBtn = (Button) findViewById(R.id.btn_dis_list);
+//        disListBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                clickDisListBtn();
+//            }
+//        });
+
     }
+
+    private void clickDisListBtn() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        OtherFragment otherFragment = LecipFragmentManager.getOtherFragment();
+        fragmentTransaction.show(otherFragment);
+
+//        otherFragment.displayList(context);
+    }
+
     /**
      * 概要:[すべてのフラグメントを表示] ボタンをクリックしたときの表示を処理する
     */
@@ -197,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment6 fragment6 = (Fragment6) fragmentManager.findFragmentById(R.id.frame_layout6);
         Fragment7 fragment7 = (Fragment7) fragmentManager.findFragmentById(R.id.frame_layout7);
         Fragment8 fragment8 = (Fragment8) fragmentManager.findFragmentById(R.id.frame_layout8);
+        OtherFragment otherFragment = (OtherFragment)  fragmentManager.findFragmentById(R.id.frame_other_layout);
 
         LecipFragmentManager.setFragment1(fragment1);
         LecipFragmentManager.setFragment2(fragment2);
@@ -206,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
         LecipFragmentManager.setFragment6(fragment6);
         LecipFragmentManager.setFragment7(fragment7);
         LecipFragmentManager.setFragment8(fragment8);
+        LecipFragmentManager.setOtherFragment(otherFragment);
 
     }
 
