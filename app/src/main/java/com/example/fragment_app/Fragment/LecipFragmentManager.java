@@ -1,4 +1,4 @@
-package com.example.fragment_app;
+package com.example.fragment_app.Fragment;
 
 public class LecipFragmentManager {
 
