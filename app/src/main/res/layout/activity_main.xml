@@ -46,34 +46,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout1"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout2"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout3"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout4"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
-
     </LinearLayout>
 
 
@@ -106,34 +78,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout5"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout6"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout7"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame_layout8"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </FrameLayout>-->
 
     </LinearLayout>
 
