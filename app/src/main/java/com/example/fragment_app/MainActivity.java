@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        clickDesiredFragmentBtn(arrayFragment);
-        clickAllFragmentBtn();
     }
-
+    /**
+     * 概要:[すべてのフラグメントを表示] ボタンをクリックしたときの表示を処理する
+    */
     private void clickAllFragmentBtn() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -83,7 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentTransaction.commit();
     }
-
+    /**
+     *　概要：[要求のフラグメントを表示] ボタンをクリックしたときの表示を処理する
+     */
     private void clickDesiredFragmentBtn(int[] arrayFragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -166,6 +168,9 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    /**
+     *　概要：オプションのデータを作成するを処理する
+     */
     private static int[] createNewArrayFragment(int pos) {
         int[] visibletable = {0, 1, 0, 0, 0, 0, 0, 0};
 
@@ -178,6 +183,10 @@ public class MainActivity extends AppCompatActivity {
         return visibletable;
     }
 
+
+    /**
+     *　概要：最初からフラグメントを作成するを処理する
+     */
     private void setFragmentInstance() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment1 fragment1 = (Fragment1) fragmentManager.findFragmentById(R.id.frame_layout1);
