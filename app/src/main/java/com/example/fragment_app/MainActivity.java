@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, getString(R.string.click1), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, getString(R.string.click1), Toast.LENGTH_SHORT).show();
                 clickFragment5Btn();
             }
         });
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         addAllBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, getString(R.string.click2), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, getString(R.string.click2), Toast.LENGTH_SHORT).show();
                 clickAllFragmentBtn();
             }
         });
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         disListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, getString(R.string.click3), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, getString(R.string.click3), Toast.LENGTH_SHORT).show();
                 clickDisListBtn();
             }
         });
@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
         OtherFragment otherFragment = LecipFragmentManager.getOtherFragment();
         if (arrayFragment[0] == VISIBLE) {
             fragmentTransaction.show(otherFragment);
-//                    fragmentTransaction.add(R.id.frame_layout1, new Fragment2());
         } else {
             fragmentTransaction.hide(otherFragment);
         }
@@ -97,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment1 fragment1 = LecipFragmentManager.getFragment1();
         if (arrayFragment[1] == VISIBLE) {
             fragmentTransaction.show(fragment1);
-//                    fragmentTransaction.add(R.id.frame_layout1, new Fragment2());
         } else {
             fragmentTransaction.hide(fragment1);
         }
@@ -105,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment2 fragment2 = LecipFragmentManager.getFragment2();
         if (arrayFragment[2] == VISIBLE) {
             fragmentTransaction.show(fragment2);
-//                    fragmentTransaction.add(R.id.frame_layout2, fragment1);
         } else {
             fragmentTransaction.hide(fragment2);
         }
@@ -114,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment3 fragment3 = LecipFragmentManager.getFragment3();
         if (arrayFragment[3] == VISIBLE) {
             fragmentTransaction.show(fragment3);
-//                    fragmentTransaction.add(R.id.frame_layout3, new Fragment2());
         } else {
             fragmentTransaction.hide(fragment3);
         }
@@ -123,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment4 fragment4 = LecipFragmentManager.getFragment4();
         if (arrayFragment[4] == VISIBLE) {
             fragmentTransaction.show(fragment4);
-//                    fragmentTransaction.add(R.id.frame_layout4, new Fragment2());
         } else {
             fragmentTransaction.hide(fragment4);
         }
@@ -132,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment5 fragment5 = LecipFragmentManager.getFragment5();
         if (arrayFragment[5] == VISIBLE) {
             fragmentTransaction.show(fragment5);
-//                    fragmentTransaction.add(R.id.frame_layout5, fragment2);
         } else {
             fragmentTransaction.hide(fragment5);
         }
@@ -141,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment6 fragment6 = LecipFragmentManager.getFragment6();
         if (arrayFragment[6] == VISIBLE) {
             fragmentTransaction.show(fragment6);
-//                    fragmentTransaction.add(R.id.frame_layout5, new Fragment2());
         } else {
             fragmentTransaction.hide(fragment6);
         }
@@ -150,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment7 fragment7 = LecipFragmentManager.getFragment7();
         if (arrayFragment[7] == VISIBLE) {
             fragmentTransaction.show(fragment7);
-//                    fragmentTransaction.add(R.id.frame_layout6, new Fragment2());
         } else {
             fragmentTransaction.hide(fragment7);
         }
@@ -159,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment8 fragment8 = LecipFragmentManager.getFragment8();
         if (arrayFragment[8] == VISIBLE) {
             fragmentTransaction.show(fragment8);
-//                    fragmentTransaction.add(R.id.frame_layout7, new Fragment2());
         } else {
             fragmentTransaction.hide(fragment8);
         }
