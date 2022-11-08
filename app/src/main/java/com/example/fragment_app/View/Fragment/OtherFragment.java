@@ -27,7 +27,6 @@ public class OtherFragment extends Fragment {
 
     private static RecyclerView rvOtherRecycleView = null;
     private static List<ContactModel> other = new ArrayList<ContactModel>();
-    private View myOtherView;
 
     public OtherFragment() {
         // Required empty public constructor

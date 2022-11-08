@@ -2,4 +2,8 @@
     <string name="app_name">Fragment_App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="request">ボタンを押して希望の表示を選択してください</string>
+    <string name="click1">Fragment5の表示を選択しました。</string>
+    <string name="click2">全てのFragmentの表示を選択しました。</string>
+    <string name="click3">RecyclerViewの表示を選択しました。</string>
 </resources>
