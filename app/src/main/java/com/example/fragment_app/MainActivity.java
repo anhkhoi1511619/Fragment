@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
@@ -25,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
     private static final int INVISIBLE = 0;
     private static final int VISIBLE = 1;
     protected int[] arrayFragment = null;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = getBaseContext();
 
         //Dummy Data
         setFragmentInstance();
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(context, getString(R.string.click1), Toast.LENGTH_LONG).show();
                 clickFragment5Btn();
             }
         });
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         addAllBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(context, getString(R.string.click2), Toast.LENGTH_LONG).show();
                 clickAllFragmentBtn();
             }
         });
@@ -57,12 +63,22 @@ public class MainActivity extends AppCompatActivity {
         disListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(context, getString(R.string.click3), Toast.LENGTH_LONG).show();
                 clickDisListBtn();
             }
         });
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getBaseContext(), getString(R.string.request), Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * 概要:表示を処理する
+     */
     private void displayDesiredPosition(int[] arrayFragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
