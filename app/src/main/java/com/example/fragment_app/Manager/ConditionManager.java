@@ -26,7 +26,9 @@ public class ConditionManager {
      * @return :	true→許可, false→移行不可.
      */
     public void setRequestId( int pos) {
-       mainActivity.displayDesiredPosition(createNewArrayFragment(pos));
+        int[] arr = createNewArrayFragment(pos);
+        arr[0] = 1;
+       mainActivity.displayDesiredPosition(arr);
     }
     /**
      *　概要：オプションのデータを作成するを処理する
