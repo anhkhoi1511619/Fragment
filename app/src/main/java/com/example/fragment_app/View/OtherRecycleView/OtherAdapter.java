@@ -41,7 +41,7 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
     @Override
     public OtherViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View contactView = LayoutInflater.from(context).inflate(R.layout.item_contact, parent, false);
-        OtherViewHolder otherViewHolder = new OtherViewHolder(context, contactView);
+        OtherViewHolder otherViewHolder = new OtherViewHolder(context, contactView, contactModelList);
         return otherViewHolder;
     }
 
@@ -56,8 +56,8 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
         TextView textView = holder.nameTxtView;
         textView.setText(contactModel.getName());
         Button button = holder.messengerBtn;
-        button.setText(contactModel.isOnline() ? "Messenger" : "Offline");
-        button.setEnabled(contactModel.isOnline());
+        button.setText(contactModel.isDisplay() ? "Display" : "No Display");
+        button.setEnabled(contactModel.isDisplay());
     }
 
     /**

@@ -8,16 +8,20 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fragment_app.Data.ContactModel;
 import com.example.fragment_app.R;
 
-public class OtherViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+import java.util.List;
 
+public class OtherViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    private List<ContactModel> list;
     public TextView nameTxtView;
     public Button messengerBtn;
     private Context mContext;
 
-    public OtherViewHolder(Context context, View itemView) {
+    public OtherViewHolder(Context context, View itemView, List<ContactModel> list) {
         super(itemView);
+        this.list = list;
         nameTxtView = (TextView) itemView.findViewById(R.id.contact_name);
         messengerBtn = (Button) itemView.findViewById(R.id.message_button);
         mContext = context;
@@ -26,9 +30,7 @@ public class OtherViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
     @Override
     public void onClick(View view) {
-        int pos =getAdapterPosition();
-        if (pos != RecyclerView.NO_POSITION) {
-            Toast.makeText(mContext, nameTxtView.getText(), Toast.LENGTH_LONG).show();
-        }
+        list.get(getAdapterPosition()).onButtonClick(String.valueOf(nameTxtView.getText()), messengerBtn.isEnabled());
+        Toast.makeText(mContext, nameTxtView.getText(), Toast.LENGTH_LONG).show();
     }
 }

@@ -1,5 +1,7 @@
 package com.example.fragment_app;
 
+import static com.example.fragment_app.Manager.ConditionManager.createNewArrayFragment;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fragment_app.Manager.ConditionManager;
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
 import com.example.fragment_app.View.Fragment.Fragment3;
@@ -18,12 +21,11 @@ import com.example.fragment_app.View.Fragment.Fragment5;
 import com.example.fragment_app.View.Fragment.Fragment6;
 import com.example.fragment_app.View.Fragment.Fragment7;
 import com.example.fragment_app.View.Fragment.Fragment8;
-import com.example.fragment_app.View.Fragment.Manager.LecipFragmentManager;
+import com.example.fragment_app.Manager.LecipFragmentManager;
 import com.example.fragment_app.View.Fragment.OtherFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int MAX_NUMBER = 9;
     private static final int INVISIBLE = 0;
     private static final int VISIBLE = 1;
     protected int[] arrayFragment = null;
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         setFragmentInstance();
         arrayFragment = createNewArrayFragment(-1);
         displayDesiredPosition(arrayFragment);
+
+        // ConditionManager初期化
+        initConditionManager();
 
 
         Button removeBtn = (Button) findViewById(R.id.btn_fragment5);
@@ -76,10 +81,16 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), getString(R.string.request), Toast.LENGTH_LONG).show();
     }
 
+    private void initConditionManager(){
+        ConditionManager cm = new ConditionManager();
+        cm.initConditionManager(this);
+    }
+
+
     /**
      * 概要:表示を処理する
      */
-    private void displayDesiredPosition(int[] arrayFragment) {
+    public void displayDesiredPosition(int[] arrayFragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -181,20 +192,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /**
-     *　概要：オプションのデータを作成するを処理する
-     */
-    private static int[] createNewArrayFragment(int pos) {
-        int[] visibletable = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-
-        for (int i = 0; i < MAX_NUMBER; i++) {
-            if (i == pos) {
-                visibletable[i] = 1;
-            }
-        }
-
-        return visibletable;
-    }
 
 
     /**

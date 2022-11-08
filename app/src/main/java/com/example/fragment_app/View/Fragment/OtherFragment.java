@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fragment_app.Data.ContactModel;
+import com.example.fragment_app.Data.RowButton;
 import com.example.fragment_app.R;
 import com.example.fragment_app.View.OtherRecycleView.OtherAdapter;
 
@@ -39,8 +40,9 @@ public class OtherFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //Dummy Data
         dataInitialize();
+
         myOtherView = inflater.inflate(R.layout.fragment_other, container, false);
         rvOtherRecycleView = myOtherView.findViewById(R.id.rvOtherView);
         rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -53,6 +55,7 @@ public class OtherFragment extends Fragment {
      * 概要：コンデイションが変化した際の初期化処理
      */
     public void changeConditionInit() {
+//        RowButton rowButton = new RowButton("Fragment1", true);
         otherAdapter = new OtherAdapter(getContext(), other);
         rvOtherRecycleView.setAdapter(otherAdapter);
 
@@ -64,6 +67,6 @@ public class OtherFragment extends Fragment {
     private void dataInitialize() {
 
         other = new ArrayList<>();
-        other = ContactModel.createContactsList(20);
+        other = ContactModel.createContactsList(7);
     }
 }

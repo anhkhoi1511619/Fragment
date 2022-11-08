@@ -1,4 +1,4 @@
-package com.example.fragment_app.View.Fragment.Manager;
+package com.example.fragment_app.Manager;
 
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
