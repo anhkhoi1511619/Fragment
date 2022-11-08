@@ -30,7 +30,10 @@ public class OtherViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
     @Override
     public void onClick(View view) {
-        list.get(getAdapterPosition()).onButtonClick(String.valueOf(nameTxtView.getText()), messengerBtn.isEnabled());
+        int pos = getAdapterPosition();
+        if (messengerBtn.isEnabled()) {
+            list.get(pos).onButtonClick(String.valueOf(nameTxtView.getText()), messengerBtn.isEnabled(), pos);
+        }
         Toast.makeText(mContext, nameTxtView.getText(), Toast.LENGTH_LONG).show();
     }
 }

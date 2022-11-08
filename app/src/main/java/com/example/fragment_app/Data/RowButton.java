@@ -20,7 +20,7 @@ public class RowButton extends ContactModel{
      * @param display:
      */
     @Override
-    public void onButtonClick(String name, boolean display){
+    public void onButtonClick(String name, boolean display, int pos){
 
 
 //        switch (name) {

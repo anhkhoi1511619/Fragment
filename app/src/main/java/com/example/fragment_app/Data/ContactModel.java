@@ -30,9 +30,11 @@ public class ContactModel {
      * @param name:
      * @param display:
      */
-    public void onButtonClick(String name, boolean display){
+    public void onButtonClick(String name, boolean display, int pos){
         ConditionManager conditionManager = new ConditionManager();
-        conditionManager.setRequestId(1);
+
+        //Ignore Other Fragment
+        conditionManager.setRequestId(pos + 1);
     }
 
     public void setDisplay(boolean mDisplay) {
@@ -44,7 +46,7 @@ public class ContactModel {
         ArrayList<ContactModel> contactModels = new ArrayList<ContactModel>();
 
         for (int i = 0; i <= numContacts; i++) {
-            contactModels.add(new ContactModel("Fragment" + ++lastContactId, i <= numContacts/2));
+            contactModels.add(new ContactModel("Fragment" + ++lastContactId, (i!= 5)));
         }
         return  contactModels;
     }
