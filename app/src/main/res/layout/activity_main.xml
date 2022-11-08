@@ -6,11 +6,13 @@
     android:layout_height="match_parent">
 
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/frame_layout"
-        android:name="com.example.fragment_app.View.Fragment.Fragment1"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -99,11 +101,5 @@
 
 
     </LinearLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frame_other_layout"
-        android:name="com.example.fragment_app.View.Fragment.OtherFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </LinearLayout>

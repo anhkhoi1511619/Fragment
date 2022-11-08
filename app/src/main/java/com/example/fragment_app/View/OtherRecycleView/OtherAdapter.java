@@ -1,5 +1,6 @@
 package com.example.fragment_app.View.OtherRecycleView;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,12 @@ import java.util.List;
 
 public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
+    Context context;
+
     private final List<ContactModel> contactModelList;
 
-    public OtherAdapter(List<ContactModel> contactModelList) {
+    public OtherAdapter(Context context, List<ContactModel> contactModelList) {
+        this.context = context;
         this.contactModelList = contactModelList;
     }
 
@@ -26,8 +30,8 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
     @NonNull
     @Override
     public OtherViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View contactView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contact, parent, false);
-        OtherViewHolder otherViewHolder = new OtherViewHolder(parent.getContext(), contactView);
+        View contactView = LayoutInflater.from(context).inflate(R.layout.item_contact, parent, false);
+        OtherViewHolder otherViewHolder = new OtherViewHolder(context, contactView);
         return otherViewHolder;
     }
 

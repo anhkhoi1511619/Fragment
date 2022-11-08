@@ -3,6 +3,7 @@ package com.example.fragment_app.View.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,39 +29,38 @@ public class OtherFragment extends Fragment {
     private static RecyclerView rvOtherRecycleView = null;
     private static List<ContactModel> other = new ArrayList<ContactModel>();
     private View myOtherButton;
+    private ArrayList<ContactModel> contactsArrayList;
+    private View myOtherView;
 
+    public OtherFragment() {
+        // Required empty public constructor
+    }
 
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//
-//        rvOtherRecycleView.findViewById(R.id.frame_other_layout);
-//        other = ContactModel.createContactsList(20);
-//        adapter = new OtherAdapter(other);
-//        rvOtherRecycleView.setAdapter(adapter);
-//        rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(this));
-//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-//        other = ContactModel.createContactsList(20);
-//        adapter = new OtherAdapter(other);
-//        rvOtherRecycleView.setAdapter(adapter);
-        myOtherButton = inflater.inflate(R.layout.fragment_other, container, false);
-        rvOtherRecycleView.findViewById(R.id.frame_other_layout);
-        rvOtherRecycleView.setHasFixedSize(true);
-        rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(myOtherButton.getContext()));
-        return myOtherButton;
+        myOtherView = inflater.inflate(R.layout.fragment_other, container, false);
+        return myOtherView;
     }
 
-//    @Override
-//    public void displayList(Context context) {
-//        other = ContactModel.createContactsList(20);
-//        adapter = new OtherAdapter(other);
-//        rvOtherRecycleView.setAdapter(adapter);
-//        rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(context));
-//    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        dataInitialize();
+
+        rvOtherRecycleView = view.findViewById(R.id.rvOtherView);
+        rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvOtherRecycleView.setHasFixedSize(true);
+        OtherAdapter otherAdapter =new OtherAdapter(getContext(), contactsArrayList);
+        rvOtherRecycleView.setAdapter(otherAdapter);
+        otherAdapter.notifyDataSetChanged();
+    }
+
+    private void dataInitialize() {
+
+        contactsArrayList = new ArrayList<>();
+        contactsArrayList = ContactModel.createContactsList(5);
+    }
 }

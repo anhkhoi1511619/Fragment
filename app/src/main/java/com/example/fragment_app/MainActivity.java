@@ -1,6 +1,7 @@
 package com.example.fragment_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                clickAllFragmentBtn();
-                clickDisListBtn();
+                clickDisListBtn(new OtherFragment());
             }
         });
 
@@ -62,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void clickDisListBtn() {
+    private void clickDisListBtn(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        OtherFragment otherFragment = LecipFragmentManager.getOtherFragment();
-        fragmentTransaction.show(otherFragment);
+//        OtherFragment otherFragment = LecipFragmentManager.getOtherFragment();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
 
 //        otherFragment.displayList(context);
     }
@@ -115,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Fragment Main
         fragmentTransaction.add(R.id.frame_layout, new Fragment2());
-
+//
         //Fragment1
         Fragment1 fragment1 = LecipFragmentManager.getFragment1();
         if (arrayFragment[0] == VISIBLE) {
@@ -219,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment7 fragment7 = (Fragment7) fragmentManager.findFragmentById(R.id.frame_layout7);
         Fragment8 fragment8 = (Fragment8) fragmentManager.findFragmentById(R.id.frame_layout8);
         //
-        OtherFragment otherFragment = (OtherFragment) fragmentManager.findFragmentById(R.id.frame_other_layout);
+//        OtherFragment otherFragment = (OtherFragment) fragmentManager.findFragmentById(R.id.frame_other_layout);
 
         LecipFragmentManager.setFragment1(fragment1);
         LecipFragmentManager.setFragment2(fragment2);
@@ -229,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         LecipFragmentManager.setFragment6(fragment6);
         LecipFragmentManager.setFragment7(fragment7);
         LecipFragmentManager.setFragment8(fragment8);
-        LecipFragmentManager.setOtherFragment(otherFragment);
+//        LecipFragmentManager.setOtherFragment(otherFragment);
 
     }
 

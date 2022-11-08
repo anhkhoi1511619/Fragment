@@ -1,50 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/otherbuttonlayout"
-    android:layout_width="600dp"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Fragment.OtherFragment">
 
-    <TextView
-        android:id="@+id/obf_menu"
-        android:layout_width="600dp"
-        android:layout_height="98dp"
-        android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="その他/メンテナンス"
-        android:textSize="34sp"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:id="@+id/svotherbutton"
-        android:layout_width="600dp"
-        android:layout_height="650dp"
-        android:overScrollMode="never"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/obf_menu">
-
-        <LinearLayout
-            android:id="@+id/otherButtonLinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvotherbutton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
-        </LinearLayout>
-    </ScrollView>
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOtherView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_contact"/>
+</FrameLayout>
