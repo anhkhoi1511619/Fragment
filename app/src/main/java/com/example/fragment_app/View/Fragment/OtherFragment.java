@@ -25,11 +25,8 @@ import java.util.List;
  */
 public class OtherFragment extends Fragment {
 
-    private OtherAdapter adapter = null;
     private static RecyclerView rvOtherRecycleView = null;
     private static List<ContactModel> other = new ArrayList<ContactModel>();
-    private View myOtherButton;
-    private ArrayList<ContactModel> contactsArrayList;
     private View myOtherView;
 
     public OtherFragment() {
@@ -40,8 +37,8 @@ public class OtherFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        myOtherView = inflater.inflate(R.layout.fragment_other, container, false);
-        return myOtherView;
+//        myOtherView = inflater.inflate(R.layout.fragment_other, container, false);
+        return inflater.inflate(R.layout.fragment_other, container, false);
     }
 
     @Override
@@ -53,14 +50,14 @@ public class OtherFragment extends Fragment {
         rvOtherRecycleView = view.findViewById(R.id.rvOtherView);
         rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
         rvOtherRecycleView.setHasFixedSize(true);
-        OtherAdapter otherAdapter =new OtherAdapter(getContext(), contactsArrayList);
+        OtherAdapter otherAdapter =new OtherAdapter(getContext(), other);
         rvOtherRecycleView.setAdapter(otherAdapter);
         otherAdapter.notifyDataSetChanged();
     }
 
     private void dataInitialize() {
 
-        contactsArrayList = new ArrayList<>();
-        contactsArrayList = ContactModel.createContactsList(5);
+        other = new ArrayList<>();
+        other = ContactModel.createContactsList(20);
     }
 }

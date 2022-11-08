@@ -2,6 +2,7 @@ package com.example.fragment_app.View.Fragment;
 
 public class LecipFragmentManager {
 
+    private static OtherFragment otherFragment;
     private static Fragment1 fragment1;
     private static Fragment2 fragment2;
     private static Fragment3 fragment3;
@@ -19,7 +20,6 @@ public class LecipFragmentManager {
         LecipFragmentManager.otherFragment = otherFragment;
     }
 
-    private static OtherFragment otherFragment;
 
 
     public static Fragment1 getFragment1() {

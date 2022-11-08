@@ -32,7 +32,7 @@ public class ContactModel {
         ArrayList<ContactModel> contactModels = new ArrayList<ContactModel>();
 
         for (int i = 0; i <= numContacts; i++) {
-            contactModels.add(new ContactModel("Person" + ++lastContactId, i <= lastContactId/2));
+            contactModels.add(new ContactModel("Person" + ++lastContactId, i <= numContacts/2));
         }
         return  contactModels;
     }
