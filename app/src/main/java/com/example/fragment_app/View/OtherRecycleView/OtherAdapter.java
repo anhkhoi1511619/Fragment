@@ -21,12 +21,22 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     private final List<ContactModel> contactModelList;
 
+    /**
+     * 概要：コンストラクタ
+     * @param contactModelList:ボタン名の配列
+     */
     public OtherAdapter(Context context, List<ContactModel> contactModelList) {
         this.context = context;
         this.contactModelList = contactModelList;
     }
 
 
+    /**
+     * 概要：ビューホルダーのインスタンスを生成
+     * @param parent:レイアウト(LinearLayoutなど)
+     * @param viewType:ビューの形式(ImageViewなど)
+     * @return ビューホルダーのインスタンス
+     */
     @NonNull
     @Override
     public OtherViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,6 +45,11 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
         return otherViewHolder;
     }
 
+    /**
+     * 概要:ビューホルダーから適切なボタン名を見つけ、ボタン名をセットする
+     * @param  holder: ビューホルダー
+     * @param position:ボタンの位置(一番上のボタンが0）
+     */
     @Override
     public void onBindViewHolder(@NonNull OtherViewHolder holder, int position) {
         ContactModel contactModel = contactModelList.get(position);
@@ -45,6 +60,9 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
         button.setEnabled(contactModel.isOnline());
     }
 
+    /**
+     * 概要:ボタンの総数を出力する
+     */
     @Override
     public int getItemCount() {
         return contactModelList.size();

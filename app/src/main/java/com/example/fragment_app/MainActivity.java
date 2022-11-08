@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         OtherFragment otherFragment = LecipFragmentManager.getOtherFragment();
         if (arrayFragment[0] == VISIBLE) {
             fragmentTransaction.show(otherFragment);
+            otherFragment.changeConditionInit();
         } else {
             fragmentTransaction.hide(otherFragment);
         }
