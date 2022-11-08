@@ -1,4 +1,14 @@
-package com.example.fragment_app.View.Fragment;
+package com.example.fragment_app.View.Fragment.Manager;
+
+import com.example.fragment_app.View.Fragment.Fragment1;
+import com.example.fragment_app.View.Fragment.Fragment2;
+import com.example.fragment_app.View.Fragment.Fragment3;
+import com.example.fragment_app.View.Fragment.Fragment4;
+import com.example.fragment_app.View.Fragment.Fragment5;
+import com.example.fragment_app.View.Fragment.Fragment6;
+import com.example.fragment_app.View.Fragment.Fragment7;
+import com.example.fragment_app.View.Fragment.Fragment8;
+import com.example.fragment_app.View.Fragment.OtherFragment;
 
 public class LecipFragmentManager {
 

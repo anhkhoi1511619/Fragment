@@ -8,6 +8,7 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout"
         android:name="com.example.fragment_app.View.Fragment.OtherFragment"
+        android:background="@drawable/layout_bg"
         android:layout_width="match_parent"
         android:layout_height="500dp">
 
@@ -17,23 +18,31 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="50dp">
 
         <Button
-            android:id="@+id/btn_remove"
+            android:id="@+id/btn_fragment5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="#9C27B0"
             android:text="Display Fragment 5" />
+
         <Button
             android:id="@+id/btn_add_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
             android:text="Display All Fragment" />
 
         <Button
             android:id="@+id/btn_dis_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="#E91E63"
             android:text="Display List" />
 
     </LinearLayout>
@@ -41,31 +50,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout1"
             android:name="com.example.fragment_app.View.Fragment.Fragment1"
             android:layout_width="150dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout2"
             android:name="com.example.fragment_app.View.Fragment.Fragment2"
             android:layout_width="150dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout3"
             android:name="com.example.fragment_app.View.Fragment.Fragment3"
             android:layout_width="150dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout4"
             android:name="com.example.fragment_app.View.Fragment.Fragment4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
     </LinearLayout>
 
@@ -73,31 +88,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout5"
             android:name="com.example.fragment_app.View.Fragment.Fragment5"
             android:layout_width="150dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout6"
             android:name="com.example.fragment_app.View.Fragment.Fragment6"
             android:layout_width="150dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout7"
             android:name="com.example.fragment_app.View.Fragment.Fragment7"
             android:layout_width="150dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frame_layout8"
             android:name="com.example.fragment_app.View.Fragment.Fragment8"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg" />
 
 
     </LinearLayout>

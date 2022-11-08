@@ -1,11 +1,9 @@
 package com.example.fragment_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +16,7 @@ import com.example.fragment_app.View.Fragment.Fragment5;
 import com.example.fragment_app.View.Fragment.Fragment6;
 import com.example.fragment_app.View.Fragment.Fragment7;
 import com.example.fragment_app.View.Fragment.Fragment8;
-import com.example.fragment_app.View.Fragment.LecipFragmentManager;
+import com.example.fragment_app.View.Fragment.Manager.LecipFragmentManager;
 import com.example.fragment_app.View.Fragment.OtherFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         displayDesiredPosition(arrayFragment);
 
 
-        Button removeBtn = (Button) findViewById(R.id.btn_remove);
+        Button removeBtn = (Button) findViewById(R.id.btn_fragment5);
         removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clickDesiredFragmentBtn();
+                clickFragment5Btn();
             }
         });
 
@@ -167,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      *　概要：[要求のフラグメントを表示] ボタンをクリックしたときの表示を処理する
      */
-    private void clickDesiredFragmentBtn() {
+    private void clickFragment5Btn() {
 
         //Dummy Data
         arrayFragment = createNewArrayFragment(5);
