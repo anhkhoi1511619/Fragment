@@ -48,6 +48,7 @@ public class OtherFragment extends Fragment {
         rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
         rvOtherRecycleView.setHasFixedSize(true);
 
+
         return myOtherView;
     }
 
