@@ -1,11 +1,17 @@
-package com.example.fragment_app.Data;
+package com.example.fragment_app.Data.Database;
+
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import com.example.fragment_app.Manager.ConditionManager;
 
 import java.util.ArrayList;
 
+@Entity (tableName = "info")
 public class ContactModel {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String mName;
     private boolean mDisplay;
 
@@ -25,6 +31,14 @@ public class ContactModel {
         return mDisplay;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     /**
      * 概要：OnClick時の処理
      * @param name:
@@ -41,7 +55,7 @@ public class ContactModel {
         this.mDisplay = mDisplay;
     }
 
-    private static int lastContactId = 0;
+    public static int lastContactId = 0;
     public static ArrayList<ContactModel> createContactsList(int numContacts) {
         ArrayList<ContactModel> contactModels = new ArrayList<ContactModel>();
 

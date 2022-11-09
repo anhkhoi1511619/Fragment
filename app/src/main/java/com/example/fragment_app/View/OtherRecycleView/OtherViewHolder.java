@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fragment_app.Data.ContactModel;
+import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.R;
 
 import java.util.List;

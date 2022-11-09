@@ -4,13 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fragment_app.Data.ContactModel;
+import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.R;
 
 import java.util.List;
@@ -28,6 +26,7 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
     public OtherAdapter(Context context, List<ContactModel> contactModelList) {
         this.context = context;
         this.contactModelList = contactModelList;
+        notifyDataSetChanged();
     }
 
 

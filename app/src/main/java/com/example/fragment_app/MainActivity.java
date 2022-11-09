@@ -7,11 +7,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.Manager.ConditionManager;
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
@@ -24,8 +26,11 @@ import com.example.fragment_app.View.Fragment.Fragment8;
 import com.example.fragment_app.Manager.LecipFragmentManager;
 import com.example.fragment_app.View.Fragment.OtherFragment;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
+    private static final String MY_REQUEST_CODE = "MY_REQUEST_CODE";
     private static final int INVISIBLE = 0;
     private static final int VISIBLE = 1;
     protected int[] arrayFragment = null;
@@ -78,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, getString(R.string.click4), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, DataActivity.class);
+//                Bundle bundle = new Bundle();
+//                List<ContactModel> mListUser = ContactModel.createContactsList(7);
+//                bundle.putSerializable(MY_REQUEST_CODE, mListUser);
+                startActivity(intent);
+
             }
         });
 
