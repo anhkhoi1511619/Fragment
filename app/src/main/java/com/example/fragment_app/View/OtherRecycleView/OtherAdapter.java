@@ -53,11 +53,9 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull OtherViewHolder holder, int position) {
         ContactModel contactModel = contactModelList.get(position);
-        TextView textView = holder.nameTxtView;
-        textView.setText(contactModel.getName());
-        Button button = holder.messengerBtn;
-        button.setText(contactModel.isDisplay() ? "Display" : "No Display");
-        button.setEnabled(contactModel.isDisplay());
+        holder.nameTxtView.setText(contactModel.getName());
+        holder.messengerBtn.setText(contactModel.isDisplay() ? "Display" : "No Display");
+        holder.messengerBtn.setEnabled(contactModel.isDisplay());
     }
 
     /**
