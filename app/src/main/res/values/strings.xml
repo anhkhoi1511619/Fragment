@@ -6,4 +6,5 @@
     <string name="click1">Fragment5の表示を選択しました。</string>
     <string name="click2">全てのFragmentの表示を選択しました。</string>
     <string name="click3">RecyclerViewの表示を選択しました。</string>
+    <string name="click4">データベース情報表示</string>
 </resources>

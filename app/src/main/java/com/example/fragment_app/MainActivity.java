@@ -73,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button connectDB = (Button) findViewById(R.id.btn_connectDB);
+        connectDB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, getString(R.string.click4), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
