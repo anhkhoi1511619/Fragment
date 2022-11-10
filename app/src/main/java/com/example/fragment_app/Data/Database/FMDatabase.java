@@ -20,5 +20,6 @@ public abstract class FMDatabase extends RoomDatabase {
         }
         return instance;
     }
+
     public abstract InfoDAO infoDAO();
 }

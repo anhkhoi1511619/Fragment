@@ -15,11 +15,12 @@ public class RowButton extends ContactModel {
 
     /**
      * 概要：OnClick時の処理
+     *
      * @param name:
      * @param display:
      */
     @Override
-    public void onButtonClick(String name, boolean display, int pos){
+    public void onButtonClick(String name, boolean display, int pos) {
 
 
 //        switch (name) {

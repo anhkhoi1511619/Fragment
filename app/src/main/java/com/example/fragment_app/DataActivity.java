@@ -26,7 +26,6 @@ public class DataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data);
         rcvFragmentInfo = findViewById(R.id.rv_user);
 
-        ContactModel.lastContactId = 0;
         mListFM = ContactModel.createContactsList(7);
         otherAdapter = new OtherAdapter(this, mListFM);
 
@@ -35,7 +34,6 @@ public class DataActivity extends AppCompatActivity {
         rcvFragmentInfo.setAdapter(otherAdapter);
 
 //        loadData();
-
 
 
     }

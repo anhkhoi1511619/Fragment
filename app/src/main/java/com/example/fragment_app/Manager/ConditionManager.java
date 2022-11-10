@@ -13,10 +13,9 @@ public class ConditionManager {
      *
      * @param mainActivity :　MainActivityのContext
      */
-    public void initConditionManager(MainActivity mainActivity){
+    public void initConditionManager(MainActivity mainActivity) {
         ConditionManager.mainActivity = mainActivity;
     }
-
 
 
     /**
@@ -25,13 +24,14 @@ public class ConditionManager {
      * @param pos :　移行先
      * @return :	true→許可, false→移行不可.
      */
-    public void setRequestId( int pos) {
+    public void setRequestId(int pos) {
         int[] arr = createNewArrayFragment(pos);
         arr[0] = 1;
-       mainActivity.displayDesiredPosition(arr);
+        mainActivity.displayDesiredPosition(arr);
     }
+
     /**
-     *　概要：オプションのデータを作成するを処理する
+     * 　概要：オプションのデータを作成するを処理する
      */
     public static int[] createNewArrayFragment(int pos) {
         int[] visibletable = {0, 0, 0, 0, 0, 0, 0, 0, 0};

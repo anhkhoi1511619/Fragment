@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), getString(R.string.request), Toast.LENGTH_LONG).show();
     }
 
-    private void initConditionManager(){
+    private void initConditionManager() {
         ConditionManager cm = new ConditionManager();
         cm.initConditionManager(this);
     }
@@ -195,13 +195,14 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 概要:[すべてのフラグメントを表示] ボタンをクリックしたときの表示を処理する
-    */
+     */
     private void clickAllFragmentBtn() {
         int[] totalFragment = {1, 1, 1, 1, 1, 1, 1, 1, 1};
         displayDesiredPosition(totalFragment);
     }
+
     /**
-     *　概要：[要求のフラグメントを表示] ボタンをクリックしたときの表示を処理する
+     * 　概要：[要求のフラグメントを表示] ボタンをクリックしたときの表示を処理する
      */
     private void clickFragment5Btn() {
 
@@ -212,9 +213,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     /**
-     *　概要：最初からフラグメントを作成するを処理する
+     * 　概要：最初からフラグメントを作成するを処理する
      */
     private void setFragmentInstance() {
         FragmentManager fragmentManager = getSupportFragmentManager();

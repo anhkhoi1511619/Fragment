@@ -21,6 +21,7 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     /**
      * 概要：コンストラクタ
+     *
      * @param contactModelList:ボタン名の配列
      */
     public OtherAdapter(Context context, List<ContactModel> contactModelList) {
@@ -32,6 +33,7 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     /**
      * 概要：ビューホルダーのインスタンスを生成
+     *
      * @param parent:レイアウト(LinearLayoutなど)
      * @param viewType:ビューの形式(ImageViewなど)
      * @return ビューホルダーのインスタンス
@@ -46,7 +48,8 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     /**
      * 概要:ビューホルダーから適切なボタン名を見つけ、ボタン名をセットする
-     * @param  holder: ビューホルダー
+     *
+     * @param holder:                    ビューホルダー
      * @param position:ボタンの位置(一番上のボタンが0）
      */
     @Override
