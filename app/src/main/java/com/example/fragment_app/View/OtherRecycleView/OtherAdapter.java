@@ -17,7 +17,7 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     Context context;
 
-    private final List<ContactModel> contactModelList;
+    private List<ContactModel> contactModelList;
 
     /**
      * 概要：コンストラクタ
@@ -27,6 +27,9 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
     public OtherAdapter(Context context, List<ContactModel> contactModelList) {
         this.context = context;
         this.contactModelList = contactModelList;
+    }
+    public void setData(List<ContactModel> contactModels) {
+        this.contactModelList = contactModels;
         notifyDataSetChanged();
     }
 

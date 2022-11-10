@@ -6,10 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fragment_app.Data.Database.ContactModel;
@@ -17,6 +20,7 @@ import com.example.fragment_app.Data.Database.FMDatabase;
 import com.example.fragment_app.View.Fragment.OtherFragment;
 import com.example.fragment_app.View.OtherRecycleView.OtherAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataActivity extends AppCompatActivity {
@@ -27,6 +31,8 @@ public class DataActivity extends AppCompatActivity {
     private Button btnAddFragment;
     private EditText edtName;
     private EditText edtDisplay;
+    private TextView btnAllFragmentList;
+    private EditText edtSearchName;
 
 
     @Override
@@ -40,14 +46,50 @@ public class DataActivity extends AppCompatActivity {
                 addInfoFragment();
             }
         });
+        btnAllFragmentList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteAllFragmentList();
+            }
+        });
+        edtSearchName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_SEARCH) {
+                    //Logic Search
+                    String strResult = textView.getText().toString().trim();
+                    handleSearchContact();
+                }
+                return false;
+            }
+        });
 
 //        ContactModel.lastContactId = 0;
 //        mListFM = ContactModel.createContactsList(7);
 //        otherAdapter = new OtherAdapter(this, mListFM);
 
+        mListFM = FMDatabase.getInstance(this).infoDAO().getFMInfo();
+        otherAdapter = new OtherAdapter(this, mListFM);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        rcvFragmentInfo.setLayoutManager(linearLayoutManager);
+        rcvFragmentInfo.setAdapter(otherAdapter);
         loadData();
 
 
+    }
+
+    private void handleSearchContact() {
+        String strSearchName = edtSearchName.getText().toString().trim();
+        mListFM = new ArrayList<>();
+        mListFM = FMDatabase.getInstance(this).infoDAO().searchContact(strSearchName);
+        otherAdapter.setData(mListFM);
+    }
+
+    private void deleteAllFragmentList() {
+//        mListFM = FMDatabase.getInstance(this).infoDAO().getFMInfo();
+        FMDatabase.getInstance(this).infoDAO().deleteFragmentList();
+        mListFM = FMDatabase.getInstance(this).infoDAO().getFMInfo();
+        loadData();
     }
 
     private void addInfoFragment() {
@@ -83,14 +125,13 @@ public class DataActivity extends AppCompatActivity {
         edtName = findViewById(R.id.edit_fragment_name);
         edtDisplay = findViewById(R.id.edit_display);
         btnAddFragment = findViewById(R.id.btn_add_fragment);
+        btnAllFragmentList = findViewById(R.id.tv_delete_all);
+        edtSearchName = findViewById(R.id.edt_search);
     }
 
     private void loadData() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rcvFragmentInfo.setLayoutManager(linearLayoutManager);
         mListFM = FMDatabase.getInstance(this).infoDAO().getFMInfo();
-        otherAdapter = new OtherAdapter(this, mListFM);
-        rcvFragmentInfo.setAdapter(otherAdapter);
+        otherAdapter.setData(mListFM);
     }
 
     private void hideSoftKeyboard(){
