@@ -129,12 +129,12 @@ public class DataActivity extends AppCompatActivity {
         btnDisplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setDisplay(btnDisplay.isEnabled());
                 if (isDisplay()) {
                     btnDisplay.setEnabled(false);
                 } else {
                     btnDisplay.setEnabled(true);
                 }
+                setDisplay(btnDisplay.isEnabled());
             }
         });
     }
