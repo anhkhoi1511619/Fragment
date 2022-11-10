@@ -15,11 +15,6 @@ public class ContactModel {
     private String mName;
     private boolean mDisplay;
 
-//    public ContactModel() {
-//        mName = "";
-//        mDisplay = false;
-//    }
-
     public ContactModel(String name, boolean display) {
         mName = name;
         mDisplay = display;

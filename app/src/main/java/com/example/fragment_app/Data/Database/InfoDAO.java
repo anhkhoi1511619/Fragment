@@ -14,4 +14,7 @@ public interface InfoDAO {
 
     @Query("SELECT * FROM info")
     List<ContactModel> getFMInfo();
+
+    @Query("SELECT * FROM info where mName= :name")
+    List<ContactModel> checkListContact(String name);
 }

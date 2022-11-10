@@ -45,10 +45,6 @@ public class DataActivity extends AppCompatActivity {
 //        mListFM = ContactModel.createContactsList(7);
 //        otherAdapter = new OtherAdapter(this, mListFM);
 
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        rcvFragmentInfo.setLayoutManager(linearLayoutManager);
-//        rcvFragmentInfo.setAdapter(otherAdapter);
-
         loadData();
 
 
@@ -59,17 +55,27 @@ public class DataActivity extends AppCompatActivity {
         String strDisplay = edtDisplay.getText().toString().trim();
 
         ContactModel contactModel = new ContactModel(strName, (strDisplay == "OK"));
+
+        if (isNameExit(strName)) {
+            //Set empty edittext
+            edtName.setText("");
+            edtDisplay.setText("");
+            Toast.makeText(this, "Fragment Name exits", Toast.LENGTH_SHORT).show();
+            return;
+        }
         FMDatabase.getInstance(this).infoDAO().insertFragmentInfo(contactModel);
 
         Toast.makeText(this, "Add Fragment successfully", Toast.LENGTH_SHORT).show();
 
-        //Set empty edittext
-        edtName.setText("");
-        edtDisplay.setText("");
         // Hide keyboard
         hideSoftKeyboard();
         //Show Result again
         loadData();
+    }
+
+    private boolean isNameExit(String name) {
+        List<ContactModel> contactModels = FMDatabase.getInstance(this).infoDAO().checkListContact(name);
+        return (contactModels != null && !contactModels.isEmpty());
     }
 
     private void initUI() {
