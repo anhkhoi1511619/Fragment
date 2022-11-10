@@ -30,9 +30,11 @@ public class DataActivity extends AppCompatActivity {
     private OtherAdapter otherAdapter;
     private Button btnAddFragment;
     private EditText edtName;
-    private EditText edtDisplay;
+    private Button btnDisplay;
     private TextView btnAllFragmentList;
     private EditText edtSearchName;
+    private boolean isDisplay = true;
+
 
 
     @Override
@@ -86,7 +88,6 @@ public class DataActivity extends AppCompatActivity {
     }
 
     private void deleteAllFragmentList() {
-//        mListFM = FMDatabase.getInstance(this).infoDAO().getFMInfo();
         FMDatabase.getInstance(this).infoDAO().deleteFragmentList();
         mListFM = FMDatabase.getInstance(this).infoDAO().getFMInfo();
         loadData();
@@ -94,14 +95,12 @@ public class DataActivity extends AppCompatActivity {
 
     private void addInfoFragment() {
         String strName = edtName.getText().toString().trim();
-        String strDisplay = edtDisplay.getText().toString().trim();
 
-        ContactModel contactModel = new ContactModel(strName, (strDisplay == "OK"));
+        ContactModel contactModel = new ContactModel(strName, isDisplay());
 
         if (isNameExit(strName)) {
             //Set empty edittext
             edtName.setText("");
-            edtDisplay.setText("");
             Toast.makeText(this, "Fragment Name exits", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -123,10 +122,21 @@ public class DataActivity extends AppCompatActivity {
     private void initUI() {
         rcvFragmentInfo = findViewById(R.id.rv_fragment_name);
         edtName = findViewById(R.id.edit_fragment_name);
-        edtDisplay = findViewById(R.id.edit_display);
+        btnDisplay = findViewById(R.id.btn_display);
         btnAddFragment = findViewById(R.id.btn_add_fragment);
         btnAllFragmentList = findViewById(R.id.tv_delete_all);
         edtSearchName = findViewById(R.id.edt_search);
+        btnDisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setDisplay(btnDisplay.isEnabled());
+                if (isDisplay()) {
+                    btnDisplay.setEnabled(false);
+                } else {
+                    btnDisplay.setEnabled(true);
+                }
+            }
+        });
     }
 
     private void loadData() {
@@ -141,5 +151,13 @@ public class DataActivity extends AppCompatActivity {
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public boolean isDisplay() {
+        return isDisplay;
+    }
+
+    public void setDisplay(boolean display) {
+        isDisplay = display;
     }
 }

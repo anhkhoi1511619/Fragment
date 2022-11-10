@@ -7,22 +7,29 @@
     android:layout_marginTop="16dp"
     tools:context=".DataActivity">
 
-    <EditText
-        android:id="@+id/edit_fragment_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:hint="FragmentName" />
 
-    <EditText
-        android:id="@+id/edit_display"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="14dp"
-        android:hint="DISPLAY/NOT DISPLAY" />
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edit_fragment_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:hint="FragmentName" />
+
+        <Button
+            android:id="@+id/btn_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="#FBFBFB"
+            android:textSize="10sp"
+            android:layout_marginTop="5dp"
+            android:hint="DISPLAY" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_add_fragment"
