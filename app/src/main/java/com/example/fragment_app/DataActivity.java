@@ -100,13 +100,13 @@ public class DataActivity extends AppCompatActivity {
 
         if (isNameExit(strName)) {
             //Set empty edittext
-            edtName.setText("");
-            Toast.makeText(this, "Fragment Name exits", Toast.LENGTH_SHORT).show();
             return;
         }
         FMDatabase.getInstance(this).infoDAO().insertFragmentInfo(contactModel);
 
         Toast.makeText(this, "Add Fragment successfully", Toast.LENGTH_SHORT).show();
+        edtName.setText("");
+        Toast.makeText(this, "Fragment Name exits", Toast.LENGTH_SHORT).show();
 
         // Hide keyboard
         hideSoftKeyboard();
