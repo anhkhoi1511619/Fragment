@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout5"
+        android:name="com.example.fragment_app.View.Fragment.Fragment5"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
@@ -15,10 +16,12 @@
         app:layout_constraintEnd_toStartOf="@+id/frame_layout6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame_layout1" />
+        app:layout_constraintTop_toBottomOf="@+id/frame_layout1"
+        tools:layout="@layout/fragment_5"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout7"
+        android:name="com.example.fragment_app.View.Fragment.Fragment7"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/layout_bg"
@@ -26,10 +29,12 @@
         app:layout_constraintEnd_toStartOf="@+id/frame_layout8"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/frame_layout6"
-        app:layout_constraintTop_toTopOf="@+id/frame_layout6" />
+        app:layout_constraintTop_toTopOf="@+id/frame_layout6"
+        tools:layout="@layout/fragment_7"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout6"
+        android:name="com.example.fragment_app.View.Fragment.Fragment6"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/layout_bg"
@@ -37,20 +42,24 @@
         app:layout_constraintEnd_toStartOf="@+id/frame_layout7"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/frame_layout5"
-        app:layout_constraintTop_toTopOf="@+id/frame_layout5" />
+        app:layout_constraintTop_toTopOf="@+id/frame_layout5"
+        tools:layout="@layout/fragment_6"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout8"
+        android:name="com.example.fragment_app.View.Fragment.Fragment8"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/layout_bg"
         app:layout_constraintBottom_toBottomOf="@+id/frame_layout7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/frame_layout7"
-        app:layout_constraintTop_toTopOf="@+id/frame_layout7" />
+        app:layout_constraintTop_toTopOf="@+id/frame_layout7"
+        tools:layout="@layout/fragment_8"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout4"
+        android:name="com.example.fragment_app.View.Fragment.Fragment4"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
@@ -58,10 +67,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/frame_layout3"
-        app:layout_constraintTop_toBottomOf="@+id/btn_dis_list" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_dis_list"
+        tools:layout="@layout/fragment_4"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout1"
+        android:name="com.example.fragment_app.View.Fragment.Fragment1"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/layout_bg"
@@ -69,10 +80,12 @@
         app:layout_constraintEnd_toStartOf="@+id/frame_layout2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frame_layout2" />
+        app:layout_constraintTop_toTopOf="@+id/frame_layout2"
+        tools:layout="@layout/fragment_1"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout2"
+        android:name="com.example.fragment_app.View.Fragment.Fragment2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/layout_bg"
@@ -80,10 +93,12 @@
         app:layout_constraintEnd_toStartOf="@+id/frame_layout3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/frame_layout1"
-        app:layout_constraintTop_toTopOf="@+id/frame_layout3" />
+        app:layout_constraintTop_toTopOf="@+id/frame_layout3"
+        tools:layout="@layout/fragment_2"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout3"
+        android:name="com.example.fragment_app.View.Fragment.Fragment3"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/layout_bg"
@@ -91,7 +106,8 @@
         app:layout_constraintEnd_toStartOf="@+id/frame_layout4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/frame_layout2"
-        app:layout_constraintTop_toTopOf="@+id/frame_layout4" />
+        app:layout_constraintTop_toTopOf="@+id/frame_layout4"
+        tools:layout="@layout/fragment_3"/>
 
     <Button
         android:id="@+id/btn_dis_list"
@@ -123,24 +139,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="16dp"
         android:text="Display All Fragment"
         app:layout_constraintBottom_toBottomOf="@+id/btn_dis_list"
         app:layout_constraintEnd_toStartOf="@+id/btn_fragment5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_dis_list" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_layout"
+        android:name="com.example.fragment_app.View.Fragment.OtherFragment"
         android:layout_width="0dp"
-        android:layout_height="500dp"
+        android:layout_height="300dp"
         android:background="@drawable/layout_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_other">
 
-    </FrameLayout>
+    </androidx.fragment.app.FragmentContainerView>
 
 
     <Button
@@ -149,12 +165,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@android:color/holo_purple"
         android:text="Connect DataBase"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame_layout6" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
