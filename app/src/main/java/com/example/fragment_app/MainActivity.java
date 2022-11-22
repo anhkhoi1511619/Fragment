@@ -7,11 +7,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.Manager.ConditionManager;
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
@@ -24,8 +26,11 @@ import com.example.fragment_app.View.Fragment.Fragment8;
 import com.example.fragment_app.Manager.LecipFragmentManager;
 import com.example.fragment_app.View.Fragment.OtherFragment;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
+    private static final String MY_REQUEST_CODE = "MY_REQUEST_CODE";
     private static final int INVISIBLE = 0;
     private static final int VISIBLE = 1;
     protected int[] arrayFragment = null;
@@ -73,6 +78,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button connectDB = (Button) findViewById(R.id.btn_connectDB);
+        connectDB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, getString(R.string.click4), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, DataActivity.class);
+//                Bundle bundle = new Bundle();
+//                List<ContactModel> mListUser = ContactModel.createContactsList(7);
+//                bundle.putSerializable(MY_REQUEST_CODE, mListUser);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
@@ -81,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), getString(R.string.request), Toast.LENGTH_LONG).show();
     }
 
-    private void initConditionManager(){
+    private void initConditionManager() {
         ConditionManager cm = new ConditionManager();
         cm.initConditionManager(this);
     }
@@ -176,13 +195,14 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 概要:[すべてのフラグメントを表示] ボタンをクリックしたときの表示を処理する
-    */
+     */
     private void clickAllFragmentBtn() {
         int[] totalFragment = {1, 1, 1, 1, 1, 1, 1, 1, 1};
         displayDesiredPosition(totalFragment);
     }
+
     /**
-     *　概要：[要求のフラグメントを表示] ボタンをクリックしたときの表示を処理する
+     * 　概要：[要求のフラグメントを表示] ボタンをクリックしたときの表示を処理する
      */
     private void clickFragment5Btn() {
 
@@ -193,9 +213,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     /**
-     *　概要：最初からフラグメントを作成するを処理する
+     * 　概要：最初からフラグメントを作成するを処理する
      */
     private void setFragmentInstance() {
         FragmentManager fragmentManager = getSupportFragmentManager();

@@ -1,12 +1,11 @@
 package com.example.fragment_app.Data;
 
 import static com.example.fragment_app.Data.FragmentEnum.FM_1;
-import static com.example.fragment_app.Data.FragmentEnum.FM_2;
-import static com.example.fragment_app.Data.FragmentEnum.FM_3;
 
+import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.Manager.ConditionManager;
 
-public class RowButton extends ContactModel{
+public class RowButton extends ContactModel {
 
 
     public RowButton(String name, boolean display) {
@@ -16,11 +15,12 @@ public class RowButton extends ContactModel{
 
     /**
      * 概要：OnClick時の処理
+     *
      * @param name:
      * @param display:
      */
     @Override
-    public void onButtonClick(String name, boolean display, int pos){
+    public void onButtonClick(String name, boolean display, int pos) {
 
 
 //        switch (name) {

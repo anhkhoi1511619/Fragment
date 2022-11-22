@@ -9,5 +9,5 @@
         android:id="@+id/rvOtherView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_contact"/>
+        tools:listitem="@layout/item_contact" />
 </FrameLayout>

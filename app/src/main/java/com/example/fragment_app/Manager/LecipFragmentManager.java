@@ -31,7 +31,6 @@ public class LecipFragmentManager {
     }
 
 
-
     public static Fragment1 getFragment1() {
         return fragment1;
     }

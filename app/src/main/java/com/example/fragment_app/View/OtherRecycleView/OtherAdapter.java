@@ -4,13 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fragment_app.Data.ContactModel;
+import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.R;
 
 import java.util.List;
@@ -19,20 +17,26 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     Context context;
 
-    private final List<ContactModel> contactModelList;
+    private List<ContactModel> contactModelList;
 
     /**
      * 概要：コンストラクタ
+     *
      * @param contactModelList:ボタン名の配列
      */
     public OtherAdapter(Context context, List<ContactModel> contactModelList) {
         this.context = context;
         this.contactModelList = contactModelList;
     }
+    public void setData(List<ContactModel> contactModels) {
+        this.contactModelList = contactModels;
+        notifyDataSetChanged();
+    }
 
 
     /**
      * 概要：ビューホルダーのインスタンスを生成
+     *
      * @param parent:レイアウト(LinearLayoutなど)
      * @param viewType:ビューの形式(ImageViewなど)
      * @return ビューホルダーのインスタンス
@@ -47,7 +51,8 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     /**
      * 概要:ビューホルダーから適切なボタン名を見つけ、ボタン名をセットする
-     * @param  holder: ビューホルダー
+     *
+     * @param holder:                    ビューホルダー
      * @param position:ボタンの位置(一番上のボタンが0）
      */
     @Override
