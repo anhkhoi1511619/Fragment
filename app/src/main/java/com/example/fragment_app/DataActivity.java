@@ -1,6 +1,8 @@
 package com.example.fragment_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,13 +19,16 @@ import android.widget.Toast;
 
 import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.Data.Database.FMDatabase;
+import com.example.fragment_app.Data.Database.iSendDataListener;
+import com.example.fragment_app.Manager.LecipFragmentManager;
+import com.example.fragment_app.View.Fragment.CommunicationFragment;
 import com.example.fragment_app.View.Fragment.OtherFragment;
 import com.example.fragment_app.View.OtherRecycleView.OtherAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataActivity extends AppCompatActivity {
+public class DataActivity extends AppCompatActivity implements iSendDataListener {
 
     private List<ContactModel> mListFM;
     private RecyclerView rcvFragmentInfo;
@@ -112,6 +117,20 @@ public class DataActivity extends AppCompatActivity {
         hideSoftKeyboard();
         //Show Result again
         loadData();
+
+
+        //Add communication between activity and fragment
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("object_contactmodel", contactModel);
+
+        //Create new Fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+//        CommunicationFragment communicationFragment = new CommunicationFragment();
+//        communicationFragment.setArguments(bundle);
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fm_test, CommunicationFragment.getInstance(contactModel, this));
+        fragmentTransaction.commit();
+
     }
 
     private boolean isNameExit(String name) {
@@ -159,5 +178,11 @@ public class DataActivity extends AppCompatActivity {
 
     public void setDisplay(boolean display) {
         isDisplay = display;
+    }
+
+    @Override
+    public void sendData(ContactModel contactModel) {
+        edtName.setText(contactModel.getName());
+        btnDisplay.setEnabled(contactModel.isDisplay());
     }
 }

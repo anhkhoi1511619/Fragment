@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.Manager.ConditionManager;
+import com.example.fragment_app.View.Fragment.CommunicationFragment;
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
 import com.example.fragment_app.View.Fragment.Fragment3;
@@ -228,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment8 fragment8 = (Fragment8) fragmentManager.findFragmentById(R.id.frame_layout8);
         //
         OtherFragment otherFragment = (OtherFragment) fragmentManager.findFragmentById(R.id.frame_layout);
+        CommunicationFragment communicationFragment = (CommunicationFragment) fragmentManager.findFragmentById(R.id.fm_test);
 
         LecipFragmentManager.setFragment1(fragment1);
         LecipFragmentManager.setFragment2(fragment2);
@@ -238,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
         LecipFragmentManager.setFragment7(fragment7);
         LecipFragmentManager.setFragment8(fragment8);
         LecipFragmentManager.setOtherFragment(otherFragment);
+        LecipFragmentManager.setCommunicationFragment(communicationFragment);
 
     }
 

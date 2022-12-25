@@ -55,6 +55,8 @@ public class OtherFragment extends Fragment {
 //        RowButton rowButton = new RowButton("Fragment1", true);
         otherAdapter = new OtherAdapter(getContext(), other);
         rvOtherRecycleView.setAdapter(otherAdapter);
+        rvOtherRecycleView.scrollToPosition(2);
+
 
     }
 

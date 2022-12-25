@@ -1,5 +1,6 @@
 package com.example.fragment_app.Manager;
 
+import com.example.fragment_app.View.Fragment.CommunicationFragment;
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
 import com.example.fragment_app.View.Fragment.Fragment3;
@@ -13,6 +14,8 @@ import com.example.fragment_app.View.Fragment.OtherFragment;
 public class LecipFragmentManager {
 
     private static OtherFragment otherFragment;
+
+    private static CommunicationFragment communicationFragment;
     private static Fragment1 fragment1;
     private static Fragment2 fragment2;
     private static Fragment3 fragment3;
@@ -21,6 +24,15 @@ public class LecipFragmentManager {
     private static Fragment6 fragment6;
     private static Fragment7 fragment7;
     private static Fragment8 fragment8;
+
+
+    public static CommunicationFragment getCommunicationFragment() {
+        return communicationFragment;
+    }
+
+    public static void setCommunicationFragment(CommunicationFragment communicationFragment) {
+        LecipFragmentManager.communicationFragment = communicationFragment;
+    }
 
     public static OtherFragment getOtherFragment() {
         return otherFragment;

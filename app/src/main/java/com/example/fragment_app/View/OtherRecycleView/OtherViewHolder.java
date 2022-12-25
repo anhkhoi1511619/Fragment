@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragment_app.Data.Database.ContactModel;
@@ -34,6 +35,7 @@ public class OtherViewHolder extends RecyclerView.ViewHolder implements View.OnC
         if (messengerBtn.isEnabled()) {
             list.get(pos).onButtonClick(String.valueOf(nameTxtView.getText()), messengerBtn.isEnabled(), pos);
         }
+
         Toast.makeText(mContext, nameTxtView.getText(), Toast.LENGTH_LONG).show();
     }
 }

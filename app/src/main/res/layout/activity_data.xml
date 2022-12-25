@@ -65,8 +65,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_fragment_name"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fm_test"
+        android:name="com.example.fragment_app.View.Fragment.Fragment1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_1"/>
 
 
 </LinearLayout>
