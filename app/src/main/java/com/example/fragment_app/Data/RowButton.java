@@ -39,7 +39,7 @@ public class RowButton extends ContactModel {
 
         if (name == FM_1.getText()) {
             ConditionManager conditionManager = new ConditionManager();
-            conditionManager.setRequestId(1);
+//            conditionManager.setRequestId(1);
         }
     }
 }

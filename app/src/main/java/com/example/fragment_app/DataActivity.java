@@ -20,9 +20,7 @@ import android.widget.Toast;
 import com.example.fragment_app.Data.Database.ContactModel;
 import com.example.fragment_app.Data.Database.FMDatabase;
 import com.example.fragment_app.Data.Database.iSendDataListener;
-import com.example.fragment_app.Manager.LecipFragmentManager;
 import com.example.fragment_app.View.Fragment.CommunicationFragment;
-import com.example.fragment_app.View.Fragment.OtherFragment;
 import com.example.fragment_app.View.OtherRecycleView.OtherAdapter;
 
 import java.util.ArrayList;

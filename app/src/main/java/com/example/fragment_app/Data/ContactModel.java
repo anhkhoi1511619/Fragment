@@ -34,7 +34,7 @@ public class ContactModel {
         ConditionManager conditionManager = new ConditionManager();
 
         //Ignore Other Fragment
-        conditionManager.setRequestId(pos + 1);
+//        conditionManager.setRequestId(pos + 1);
     }
 
     public void setDisplay(boolean mDisplay) {

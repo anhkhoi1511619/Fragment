@@ -48,10 +48,10 @@ public class ContactModel implements Serializable {
      * @param display:
      */
     public void onButtonClick(String name, boolean display, int pos) {
-        ConditionManager conditionManager = new ConditionManager();
-
-        //Ignore Other Fragment
-        conditionManager.setRequestId(pos + 1);
+//        ConditionManager conditionManager = new ConditionManager();
+//
+//        //Ignore Other Fragment
+//        conditionManager.setRequestId(pos + 1);
     }
 
     public void setDisplay(boolean mDisplay) {

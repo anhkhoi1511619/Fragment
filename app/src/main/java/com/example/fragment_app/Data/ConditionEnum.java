@@ -21,7 +21,7 @@ public enum ConditionEnum {
      * @param conditionTitle
      * @param isHistory
      */
-    private ConditionEnum(int fragmentID, String conditionTitle, boolean isHistory) {
+    ConditionEnum(int fragmentID, String conditionTitle, boolean isHistory) {
         this.fragmentID = fragmentID;
         this.conditionTitle = conditionTitle;
         this.isHistory = isHistory;

@@ -1,5 +1,6 @@
 package com.example.fragment_app.Manager;
 
+import com.example.fragment_app.MainActivity;
 import com.example.fragment_app.View.Fragment.CommunicationFragment;
 import com.example.fragment_app.View.Fragment.Fragment1;
 import com.example.fragment_app.View.Fragment.Fragment2;
@@ -11,7 +12,9 @@ import com.example.fragment_app.View.Fragment.Fragment7;
 import com.example.fragment_app.View.Fragment.Fragment8;
 import com.example.fragment_app.View.Fragment.OtherFragment;
 
-public class LecipFragmentManager {
+public class FragmentManager {
+
+    MainActivity mainActivity;
 
     private static OtherFragment otherFragment;
 
@@ -31,7 +34,7 @@ public class LecipFragmentManager {
     }
 
     public static void setCommunicationFragment(CommunicationFragment communicationFragment) {
-        LecipFragmentManager.communicationFragment = communicationFragment;
+        FragmentManager.communicationFragment = communicationFragment;
     }
 
     public static OtherFragment getOtherFragment() {
@@ -39,7 +42,7 @@ public class LecipFragmentManager {
     }
 
     public static void setOtherFragment(OtherFragment otherFragment) {
-        LecipFragmentManager.otherFragment = otherFragment;
+        FragmentManager.otherFragment = otherFragment;
     }
 
 
@@ -48,7 +51,7 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment1(Fragment1 fragment1) {
-        LecipFragmentManager.fragment1 = fragment1;
+        FragmentManager.fragment1 = fragment1;
     }
 
     public static Fragment2 getFragment2() {
@@ -56,7 +59,7 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment2(Fragment2 fragment2) {
-        LecipFragmentManager.fragment2 = fragment2;
+        FragmentManager.fragment2 = fragment2;
     }
 
 
@@ -65,7 +68,7 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment3(Fragment3 fragment3) {
-        LecipFragmentManager.fragment3 = fragment3;
+        FragmentManager.fragment3 = fragment3;
     }
 
     public static Fragment4 getFragment4() {
@@ -73,7 +76,7 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment4(Fragment4 fragment4) {
-        LecipFragmentManager.fragment4 = fragment4;
+        FragmentManager.fragment4 = fragment4;
     }
 
     public static Fragment5 getFragment5() {
@@ -81,7 +84,7 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment5(Fragment5 fragment5) {
-        LecipFragmentManager.fragment5 = fragment5;
+        FragmentManager.fragment5 = fragment5;
     }
 
     public static Fragment6 getFragment6() {
@@ -89,7 +92,7 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment6(Fragment6 fragment6) {
-        LecipFragmentManager.fragment6 = fragment6;
+        FragmentManager.fragment6 = fragment6;
     }
 
     public static Fragment7 getFragment7() {
@@ -97,7 +100,7 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment7(Fragment7 fragment7) {
-        LecipFragmentManager.fragment7 = fragment7;
+        FragmentManager.fragment7 = fragment7;
     }
 
     public static Fragment8 getFragment8() {
@@ -105,6 +108,6 @@ public class LecipFragmentManager {
     }
 
     public static void setFragment8(Fragment8 fragment8) {
-        LecipFragmentManager.fragment8 = fragment8;
+        FragmentManager.fragment8 = fragment8;
     }
 }

@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.fragment_app.Data.ConditionEnum;
 import com.example.fragment_app.Data.Database.ContactModel;
+import com.example.fragment_app.Manager.ChangeConditionID;
 import com.example.fragment_app.R;
 import com.example.fragment_app.View.OtherRecycleView.OtherAdapter;
 
@@ -20,11 +22,11 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class OtherFragment extends Fragment {
+public class OtherFragment extends Fragment implements ChangeConditionID {
 
-    private static RecyclerView rvOtherRecycleView = null;
+    private static RecyclerView rvOtherRecycleView;
     private static List<ContactModel> other = new ArrayList<ContactModel>();
-    private OtherAdapter otherAdapter = null;
+    private OtherAdapter otherAdapter;
     private View myOtherView;
 
 
@@ -43,22 +45,14 @@ public class OtherFragment extends Fragment {
         rvOtherRecycleView = myOtherView.findViewById(R.id.rvOtherView);
         rvOtherRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
         rvOtherRecycleView.setHasFixedSize(true);
+        otherAdapter = new OtherAdapter(getActivity(), other);
+        rvOtherRecycleView.setAdapter(otherAdapter);
+        rvOtherRecycleView.scrollToPosition(2);
 
 
         return myOtherView;
     }
 
-    /**
-     * 概要：コンデイションが変化した際の初期化処理
-     */
-    public void changeConditionInit() {
-//        RowButton rowButton = new RowButton("Fragment1", true);
-        otherAdapter = new OtherAdapter(getContext(), other);
-        rvOtherRecycleView.setAdapter(otherAdapter);
-        rvOtherRecycleView.scrollToPosition(2);
-
-
-    }
 
     /**
      * 概要：データ初期化処理
@@ -67,5 +61,11 @@ public class OtherFragment extends Fragment {
 
         other = new ArrayList<>();
         other = ContactModel.createContactsList(7);
+    }
+
+
+    //概要：コンデイションが変化した際の初期化処理
+    @Override
+    public void changeConditionID(ConditionEnum conditionEnum) {
     }
 }
