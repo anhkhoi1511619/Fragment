@@ -31,9 +31,9 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
     private List<StudentClassModel> mListFM;
     private RecyclerView rcvFragmentInfo;
     private OtherAdapter otherAdapter;
-    private Button btnAddFragment;
+    private Button btnAddStudent;
     private EditText edtName;
-    private Button btnDisplay;
+    private Button btnMale;
     private TextView btnAllFragmentList;
     private EditText edtSearchName;
     private boolean isDisplay = true;
@@ -45,7 +45,7 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
         initUI();
-        btnAddFragment.setOnClickListener(new View.OnClickListener() {
+        btnAddStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addInfoFragment();
@@ -138,20 +138,20 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
 
     private void initUI() {
         rcvFragmentInfo = findViewById(R.id.rv_fragment_name);
-        edtName = findViewById(R.id.edit_fragment_name);
-        btnDisplay = findViewById(R.id.btn_display);
-        btnAddFragment = findViewById(R.id.btn_add_fragment);
+        edtName = findViewById(R.id.edit_student_name);
+        btnMale = findViewById(R.id.btn_male);
+        btnAddStudent = findViewById(R.id.btn_add_student);
         btnAllFragmentList = findViewById(R.id.tv_delete_all);
         edtSearchName = findViewById(R.id.edt_search);
-        btnDisplay.setOnClickListener(new View.OnClickListener() {
+        btnMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isDisplay()) {
-                    btnDisplay.setEnabled(false);
+                    btnMale.setEnabled(false);
                 } else {
-                    btnDisplay.setEnabled(true);
+                    btnMale.setEnabled(true);
                 }
-                setDisplay(btnDisplay.isEnabled());
+                setDisplay(btnMale.isEnabled());
             }
         });
     }
@@ -181,6 +181,6 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
     @Override
     public void sendData(StudentClassModel studentClassModel) {
         edtName.setText(studentClassModel.getName());
-        btnDisplay.setEnabled(studentClassModel.isDisplay());
+        btnMale.setEnabled(studentClassModel.isDisplay());
     }
 }
