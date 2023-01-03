@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fragment_app.Data.Database.ContactModel;
+import com.example.fragment_app.Data.Database.StudentClassModel;
 import com.example.fragment_app.Data.Database.FMDatabase;
 import com.example.fragment_app.Data.Database.iSendDataListener;
 import com.example.fragment_app.View.Fragment.CommunicationFragment;
@@ -28,7 +28,7 @@ import java.util.List;
 
 public class DataActivity extends AppCompatActivity implements iSendDataListener {
 
-    private List<ContactModel> mListFM;
+    private List<StudentClassModel> mListFM;
     private RecyclerView rcvFragmentInfo;
     private OtherAdapter otherAdapter;
     private Button btnAddFragment;
@@ -99,13 +99,13 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
     private void addInfoFragment() {
         String strName = edtName.getText().toString().trim();
 
-        ContactModel contactModel = new ContactModel(strName, isDisplay());
+        StudentClassModel studentClassModel = new StudentClassModel(strName, isDisplay());
 
         if (isNameExit(strName)) {
             //Set empty edittext
             return;
         }
-        FMDatabase.getInstance(this).infoDAO().insertFragmentInfo(contactModel);
+        FMDatabase.getInstance(this).infoDAO().insertFragmentInfo(studentClassModel);
 
         Toast.makeText(this, "Add Fragment successfully", Toast.LENGTH_SHORT).show();
         edtName.setText("");
@@ -126,14 +126,14 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
 //        CommunicationFragment communicationFragment = new CommunicationFragment();
 //        communicationFragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fm_test, CommunicationFragment.getInstance(contactModel, this));
+        fragmentTransaction.replace(R.id.fm_test, CommunicationFragment.getInstance(studentClassModel, this));
         fragmentTransaction.commit();
 
     }
 
     private boolean isNameExit(String name) {
-        List<ContactModel> contactModels = FMDatabase.getInstance(this).infoDAO().checkListContact(name);
-        return (contactModels != null && !contactModels.isEmpty());
+        List<StudentClassModel> studentClassModels = FMDatabase.getInstance(this).infoDAO().checkListContact(name);
+        return (studentClassModels != null && !studentClassModels.isEmpty());
     }
 
     private void initUI() {
@@ -179,8 +179,8 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
     }
 
     @Override
-    public void sendData(ContactModel contactModel) {
-        edtName.setText(contactModel.getName());
-        btnDisplay.setEnabled(contactModel.isDisplay());
+    public void sendData(StudentClassModel studentClassModel) {
+        edtName.setText(studentClassModel.getName());
+        btnDisplay.setEnabled(studentClassModel.isDisplay());
     }
 }

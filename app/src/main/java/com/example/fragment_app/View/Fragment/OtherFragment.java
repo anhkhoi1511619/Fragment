@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fragment_app.Data.ConditionEnum;
-import com.example.fragment_app.Data.Database.ContactModel;
+import com.example.fragment_app.Data.Database.StudentClassModel;
 import com.example.fragment_app.Manager.ChangeConditionID;
 import com.example.fragment_app.R;
 import com.example.fragment_app.View.OtherRecycleView.OtherAdapter;
@@ -25,7 +25,7 @@ import java.util.List;
 public class OtherFragment extends Fragment implements ChangeConditionID {
 
     private static RecyclerView rvOtherRecycleView;
-    private static List<ContactModel> other = new ArrayList<ContactModel>();
+    private static List<StudentClassModel> other = new ArrayList<StudentClassModel>();
     private OtherAdapter otherAdapter;
     private View myOtherView;
 
@@ -60,7 +60,7 @@ public class OtherFragment extends Fragment implements ChangeConditionID {
     private void dataInitialize() {
 
         other = new ArrayList<>();
-        other = ContactModel.createContactsList(7);
+        other = StudentClassModel.createContactsList(7);
     }
 
 

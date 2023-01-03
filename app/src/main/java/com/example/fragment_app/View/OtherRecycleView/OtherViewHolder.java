@@ -6,21 +6,20 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fragment_app.Data.Database.ContactModel;
+import com.example.fragment_app.Data.Database.StudentClassModel;
 import com.example.fragment_app.R;
 
 import java.util.List;
 
 public class OtherViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    private List<ContactModel> list;
+    private List<StudentClassModel> list;
     public TextView nameTxtView;
     public Button messengerBtn;
     private Context mContext;
 
-    public OtherViewHolder(Context context, View itemView, List<ContactModel> list) {
+    public OtherViewHolder(Context context, View itemView, List<StudentClassModel> list) {
         super(itemView);
         this.list = list;
         nameTxtView = (TextView) itemView.findViewById(R.id.contact_name);

@@ -3,20 +3,18 @@ package com.example.fragment_app.Data.Database;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.example.fragment_app.Manager.ConditionManager;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
 @Entity(tableName = "info")
-public class ContactModel implements Serializable {
+public class StudentClassModel implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String mName;
     private boolean mDisplay;
 
-    public ContactModel(String name, boolean display) {
+    public StudentClassModel(String name, boolean display) {
         mName = name;
         mDisplay = display;
     }
@@ -60,13 +58,13 @@ public class ContactModel implements Serializable {
 
     public static int lastContactId = 0;
 
-    public static ArrayList<ContactModel> createContactsList(int numContacts) {
-        ArrayList<ContactModel> contactModels = new ArrayList<ContactModel>();
+    public static ArrayList<StudentClassModel> createContactsList(int numContacts) {
+        ArrayList<StudentClassModel> studentClassModels = new ArrayList<StudentClassModel>();
 
         for (int i = 0; i <= numContacts; i++) {
-            contactModels.add(new ContactModel("Fragment" + ++lastContactId, (i != 5)));
+            studentClassModels.add(new StudentClassModel("Fragment" + ++lastContactId, (i != 5)));
         }
-        return contactModels;
+        return studentClassModels;
     }
 
 }

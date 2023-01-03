@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.fragment_app.Data.Database.ContactModel;
+import com.example.fragment_app.Data.Database.StudentClassModel;
 import com.example.fragment_app.Data.Database.iSendDataListener;
 import com.example.fragment_app.R;
 
@@ -25,11 +25,11 @@ public class CommunicationFragment extends Fragment {
     private static iSendDataListener iSendDataListener;
 
 
-    public static CommunicationFragment getInstance(ContactModel contactModel, iSendDataListener listener) {
+    public static CommunicationFragment getInstance(StudentClassModel studentClassModel, iSendDataListener listener) {
         iSendDataListener = listener;
         CommunicationFragment communicationFragment = new CommunicationFragment();
         Bundle bundle = new Bundle();
-        bundle.putSerializable("object_contactmodel", contactModel);
+        bundle.putSerializable("object_contactmodel", studentClassModel);
         communicationFragment.setArguments(bundle);
         return communicationFragment;
         // Required empty public constructor
@@ -58,9 +58,9 @@ public class CommunicationFragment extends Fragment {
         });
 
         try {
-            ContactModel contactModel = (ContactModel) getArguments().get("object_contactmodel");
-            tvComContactName.setText(contactModel.getName());
-            btnDisplay.setEnabled(contactModel.isDisplay());
+            StudentClassModel studentClassModel = (StudentClassModel) getArguments().get("object_contactmodel");
+            tvComContactName.setText(studentClassModel.getName());
+            btnDisplay.setEnabled(studentClassModel.isDisplay());
         } catch (NullPointerException exception) {
 
         }
@@ -75,7 +75,7 @@ public class CommunicationFragment extends Fragment {
         String strName = tvComContactName.getText().toString().trim();
         Boolean isDisplay = btnDisplay.isEnabled();
 
-        ContactModel contactModel = new ContactModel(strName, isDisplay);
-        iSendDataListener.sendData(contactModel);
+        StudentClassModel studentClassModel = new StudentClassModel(strName, isDisplay);
+        iSendDataListener.sendData(studentClassModel);
     }
 }

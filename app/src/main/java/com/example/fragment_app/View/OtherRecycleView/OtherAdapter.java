@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fragment_app.Data.Database.ContactModel;
+import com.example.fragment_app.Data.Database.StudentClassModel;
 import com.example.fragment_app.R;
 
 import java.util.List;
@@ -17,19 +17,19 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
 
     Context context;
 
-    private List<ContactModel> contactModelList;
+    private List<StudentClassModel> studentClassModelList;
 
     /**
      * 概要：コンストラクタ
      *
-     * @param contactModelList:ボタン名の配列
+     * @param studentClassModelList:ボタン名の配列
      */
-    public OtherAdapter(Context context, List<ContactModel> contactModelList) {
+    public OtherAdapter(Context context, List<StudentClassModel> studentClassModelList) {
         this.context = context;
-        this.contactModelList = contactModelList;
+        this.studentClassModelList = studentClassModelList;
     }
-    public void setData(List<ContactModel> contactModels) {
-        this.contactModelList = contactModels;
+    public void setData(List<StudentClassModel> studentClassModels) {
+        this.studentClassModelList = studentClassModels;
         notifyDataSetChanged();
     }
 
@@ -45,7 +45,7 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
     @Override
     public OtherViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View contactView = LayoutInflater.from(context).inflate(R.layout.item_contact, parent, false);
-        OtherViewHolder otherViewHolder = new OtherViewHolder(context, contactView, contactModelList);
+        OtherViewHolder otherViewHolder = new OtherViewHolder(context, contactView, studentClassModelList);
         return otherViewHolder;
     }
 
@@ -57,10 +57,10 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
      */
     @Override
     public void onBindViewHolder(@NonNull OtherViewHolder holder, int position) {
-        ContactModel contactModel = contactModelList.get(position);
-        holder.nameTxtView.setText(contactModel.getName());
-        holder.messengerBtn.setText(contactModel.isDisplay() ? "Display" : "No Display");
-        holder.messengerBtn.setEnabled(contactModel.isDisplay());
+        StudentClassModel studentClassModel = studentClassModelList.get(position);
+        holder.nameTxtView.setText(studentClassModel.getName());
+        holder.messengerBtn.setText(studentClassModel.isDisplay() ? "Display" : "No Display");
+        holder.messengerBtn.setEnabled(studentClassModel.isDisplay());
     }
 
     /**
@@ -68,6 +68,6 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
      */
     @Override
     public int getItemCount() {
-        return contactModelList.size();
+        return studentClassModelList.size();
     }
 }
