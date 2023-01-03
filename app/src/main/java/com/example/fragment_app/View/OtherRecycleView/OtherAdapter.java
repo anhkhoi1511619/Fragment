@@ -58,9 +58,8 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull OtherViewHolder holder, int position) {
         StudentClassModel studentClassModel = studentClassModelList.get(position);
-        holder.nameTxtView.setText(studentClassModel.getName());
-        holder.messengerBtn.setText(studentClassModel.isDisplay() ? "Display" : "No Display");
-        holder.messengerBtn.setEnabled(studentClassModel.isDisplay());
+        holder.nameTxtView.setText(studentClassModel.getFullName());
+        holder.messengerBtn.setText(studentClassModel.getStdClass());
     }
 
     /**

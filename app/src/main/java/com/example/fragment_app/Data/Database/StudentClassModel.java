@@ -11,24 +11,48 @@ public class StudentClassModel implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private String mName;
-    private boolean mDisplay;
+    private String stdClass;
+    private String fullName;
+    private boolean isMale;
+    private String address;
 
-    public StudentClassModel(String name, boolean display) {
-        mName = name;
-        mDisplay = display;
+    public StudentClassModel(String stdClass, String fullName, boolean isMale, String address) {
+        this.stdClass = stdClass;
+        this.fullName = fullName;
+        this.isMale = isMale;
+        this.address = address;
     }
 
-    public String getName() {
-        return mName;
+    public String getStdClass() {
+        return stdClass;
     }
 
-    public void setName(String mName) {
-        this.mName = mName;
+    public void setStdClass(String stdClass) {
+        this.stdClass = stdClass;
     }
 
-    public boolean isDisplay() {
-        return mDisplay;
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public boolean isMale() {
+        return isMale;
+    }
+
+    public void setMale(boolean male) {
+        isMale = male;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getId() {
@@ -52,9 +76,6 @@ public class StudentClassModel implements Serializable {
 //        conditionManager.setRequestId(pos + 1);
     }
 
-    public void setDisplay(boolean mDisplay) {
-        this.mDisplay = mDisplay;
-    }
 
     public static int lastContactId = 0;
 
@@ -62,7 +83,7 @@ public class StudentClassModel implements Serializable {
         ArrayList<StudentClassModel> studentClassModels = new ArrayList<StudentClassModel>();
 
         for (int i = 0; i <= numContacts; i++) {
-            studentClassModels.add(new StudentClassModel("Fragment" + ++lastContactId, (i != 5)));
+            studentClassModels.add(new StudentClassModel("Class 10A" + i, "NTA Khoi" + i, true, "Japan"));
         }
         return studentClassModels;
     }

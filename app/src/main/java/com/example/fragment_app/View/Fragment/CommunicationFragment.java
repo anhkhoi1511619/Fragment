@@ -59,8 +59,8 @@ public class CommunicationFragment extends Fragment {
 
         try {
             StudentClassModel studentClassModel = (StudentClassModel) getArguments().get("object_contactmodel");
-            tvComContactName.setText(studentClassModel.getName());
-            btnDisplay.setEnabled(studentClassModel.isDisplay());
+            tvComContactName.setText(studentClassModel.getFullName());
+            btnDisplay.setEnabled(studentClassModel.isMale());
         } catch (NullPointerException exception) {
 
         }
@@ -75,7 +75,7 @@ public class CommunicationFragment extends Fragment {
         String strName = tvComContactName.getText().toString().trim();
         Boolean isDisplay = btnDisplay.isEnabled();
 
-        StudentClassModel studentClassModel = new StudentClassModel(strName, isDisplay);
+        StudentClassModel studentClassModel = new StudentClassModel(strName, "Khoi", isDisplay, "Japan");
         iSendDataListener.sendData(studentClassModel);
     }
 }

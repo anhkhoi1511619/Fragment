@@ -15,12 +15,12 @@ public interface InfoDAO {
     @Query("SELECT * FROM info")
     List<StudentClassModel> getFMInfo();
 
-    @Query("SELECT * FROM info where mName= :name")
-    List<StudentClassModel> checkListContact(String name);
+    @Query("SELECT * FROM info where stdClass= :mClass")
+    List<StudentClassModel> checkListContact(String mClass);
 
     @Query("DELETE FROM info")
     void deleteFragmentList();
 
-    @Query("SELECT * FROM info WHERE mName LIKE '%' || :name || '%'")
-    List<StudentClassModel> searchContact(String name);
+    @Query("SELECT * FROM info WHERE stdClass LIKE '%' || :mClass || '%'")
+    List<StudentClassModel> searchContact(String mClass);
 }
