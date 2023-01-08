@@ -1,6 +1,5 @@
 package com.example.fragment_app.Manager;
 
-import android.os.Handler;
 import android.view.View;
 
 import com.example.fragment_app.Data.ConditionEnum;
@@ -36,14 +35,14 @@ public class ConditionManager {
      * @return :	true→許可, false→移行不可.
      */
     public void setRequestId(ConditionEnum conditionEnum) {
-        int[] arr = createNewArrayFragment(conditionEnum);
+        int[] arr = setRequestID(conditionEnum);
         mainActivity.displayDesiredPosition(arr);
     }
 
     /**
      * 　概要：オプションのデータを作成するを処理する
      */
-    public static int[] createNewArrayFragment(ConditionEnum conditionEnum) {
+    public static int[] setRequestID(ConditionEnum conditionEnum) {
         int[] visibletable = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         for(int[] visibletable1:visibleFragmentTable){

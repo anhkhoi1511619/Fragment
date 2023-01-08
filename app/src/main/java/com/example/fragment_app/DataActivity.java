@@ -99,7 +99,7 @@ public class DataActivity extends AppCompatActivity implements iSendDataListener
     private void addInfoFragment() {
         String strName = edtName.getText().toString().trim();
         String strAddress = edtAddress.getText().toString().trim();
-        Boolean isMale = btnMale.isEnabled();
+        boolean isMale = btnMale.isEnabled();
         String strClass = edtClass.getText().toString().trim();
 
         StudentClassModel studentClassModel = new StudentClassModel(strClass, strName, isMale, strAddress);

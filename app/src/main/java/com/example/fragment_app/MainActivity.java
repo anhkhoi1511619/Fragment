@@ -1,6 +1,6 @@
 package com.example.fragment_app;
 
-import static com.example.fragment_app.Manager.ConditionManager.createNewArrayFragment;
+import static com.example.fragment_app.Manager.ConditionManager.setRequestID;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Dummy Data
         setFragmentInstance();
-        arrayFragment = createNewArrayFragment(ConditionEnum.ACTIVE);
+        arrayFragment = setRequestID(ConditionEnum.ACTIVE);
         displayDesiredPosition(arrayFragment);
 
         // ConditionManager初期化
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickDisListBtn() {
-        arrayFragment = createNewArrayFragment(ConditionEnum.LIST);
+        arrayFragment = setRequestID(ConditionEnum.LIST);
         displayDesiredPosition(arrayFragment);
     }
 
@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
      * 概要:[すべてのフラグメントを表示] ボタンをクリックしたときの表示を処理する
      */
     private void clickAllFragmentBtn() {
-        arrayFragment = createNewArrayFragment(ConditionEnum.ACTIVE);
+        arrayFragment = setRequestID(ConditionEnum.ACTIVE);
         displayDesiredPosition(arrayFragment);
     }
 
@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
     private void clickFragment5Btn() {
 
         //Dummy Data
-        arrayFragment = createNewArrayFragment(ConditionEnum.DESIRED_FM);
+        arrayFragment = setRequestID(ConditionEnum.DESIRED_FM);
         displayDesiredPosition(arrayFragment);
 
     }
