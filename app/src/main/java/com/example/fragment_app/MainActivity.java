@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ import com.example.fragment_app.View.Fragment.Fragment7;
 import com.example.fragment_app.View.Fragment.Fragment8;
 import com.example.fragment_app.Manager.FragmentManager;
 import com.example.fragment_app.View.Fragment.OtherFragment;
+import com.example.fragment_app.service.ServiceFloating;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,10 +49,16 @@ public class MainActivity extends AppCompatActivity {
 
         setRequestId(ConditionEnum.ACTIVE);
 
+        //試験用
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startService(new Intent(MainActivity.this, ServiceFloating.class));
+        }
+
 
         Button removeBtn = (Button) findViewById(R.id.btn_fragment5);
         removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 Toast.makeText(context, getString(R.string.click1), Toast.LENGTH_SHORT).show();
                 clickFragment5Btn();
