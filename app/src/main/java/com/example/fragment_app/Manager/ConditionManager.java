@@ -34,15 +34,15 @@ public class ConditionManager {
      * @param conditionEnum :　移行先
      * @return :	true→許可, false→移行不可.
      */
-    public void setRequestId(ConditionEnum conditionEnum) {
-        int[] arr = setRequestID(conditionEnum);
+    public static void setRequestId(ConditionEnum conditionEnum) {
+        int[] arr = createNewArrayFragment(conditionEnum);
         mainActivity.displayDesiredPosition(arr);
     }
 
     /**
      * 　概要：オプションのデータを作成するを処理する
      */
-    public static int[] setRequestID(ConditionEnum conditionEnum) {
+    public static int[] createNewArrayFragment(ConditionEnum conditionEnum) {
         int[] visibletable = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         for(int[] visibletable1:visibleFragmentTable){
@@ -51,12 +51,6 @@ public class ConditionManager {
             }
             System.out.println("Phần tử lớn nhất trong mảng là: ");
         }
-
-//        for (int i = 0; i < MAX_NUMBER; i++) {
-//            if (i == pos) {
-//                visibletable[i] = 1;
-//            }
-//        }
 
         return visibletable;
     }

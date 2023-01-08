@@ -1,6 +1,7 @@
 package com.example.fragment_app;
 
-import static com.example.fragment_app.Manager.ConditionManager.setRequestID;
+import static com.example.fragment_app.Manager.ConditionManager.createNewArrayFragment;
+import static com.example.fragment_app.Manager.ConditionManager.setRequestId;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String MY_REQUEST_CODE = "MY_REQUEST_CODE";
     private static final int INVISIBLE = View.INVISIBLE;
     private static final int VISIBLE = View.VISIBLE;
-    protected static int[] arrayFragment = null;
     Context context;
 
     @Override
@@ -42,11 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Dummy Data
         setFragmentInstance();
-        arrayFragment = setRequestID(ConditionEnum.ACTIVE);
-        displayDesiredPosition(arrayFragment);
-
         // ConditionManager初期化
         initConditionManager();
+
+        setRequestId(ConditionEnum.ACTIVE);
 
 
         Button removeBtn = (Button) findViewById(R.id.btn_fragment5);
@@ -187,27 +186,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickDisListBtn() {
-        arrayFragment = setRequestID(ConditionEnum.LIST);
-        displayDesiredPosition(arrayFragment);
+        setRequestId(ConditionEnum.LIST);
     }
 
     /**
      * 概要:[すべてのフラグメントを表示] ボタンをクリックしたときの表示を処理する
      */
     private void clickAllFragmentBtn() {
-        arrayFragment = setRequestID(ConditionEnum.ACTIVE);
-        displayDesiredPosition(arrayFragment);
+        setRequestId(ConditionEnum.ACTIVE);
     }
 
     /**
      * 　概要：[要求のフラグメントを表示] ボタンをクリックしたときの表示を処理する
      */
     private void clickFragment5Btn() {
-
+        setRequestId(ConditionEnum.DESIRED_FM);
         //Dummy Data
-        arrayFragment = setRequestID(ConditionEnum.DESIRED_FM);
-        displayDesiredPosition(arrayFragment);
-
     }
 
 
