@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".View.Fragment.TenKeyFragment">
+
+    <TableLayout
+        android:layout_width="600dp"
+        android:layout_height="460dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/tkf_bt7"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_7" />
+
+            <ImageButton
+                android:id="@+id/tkf_bt8"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_8" />
+
+            <ImageButton
+                android:id="@+id/tkf_bt9"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_9" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/tkf_bt4"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_4" />
+
+            <ImageButton
+                android:id="@+id/tkf_bt5"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_5" />
+
+            <ImageButton
+                android:id="@+id/tkf_bt6"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_6" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/tkf_bt1"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_1" />
+
+            <ImageButton
+                android:id="@+id/tkf_bt2"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_2" />
+
+            <ImageButton
+                android:id="@+id/tkf_bt3"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/tkf_btac"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_ac" />
+
+            <ImageButton
+                android:id="@+id/tkf_bt0"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_0" />
+
+            <ImageButton
+                android:id="@+id/tkf_btdecide"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tkf_button_kakutei" />
+        </TableRow>
+    </TableLayout>
+</FrameLayout>
