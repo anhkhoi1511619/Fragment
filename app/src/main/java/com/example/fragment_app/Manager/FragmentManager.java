@@ -11,6 +11,7 @@ import com.example.fragment_app.View.Fragment.Fragment6;
 import com.example.fragment_app.View.Fragment.Fragment7;
 import com.example.fragment_app.View.Fragment.Fragment8;
 import com.example.fragment_app.View.Fragment.OtherFragment;
+import com.example.fragment_app.View.Fragment.TenKeyFragment;
 
 public class FragmentManager {
 
@@ -27,6 +28,8 @@ public class FragmentManager {
     private static Fragment6 fragment6;
     private static Fragment7 fragment7;
     private static Fragment8 fragment8;
+
+    private static TenKeyFragment tenKeyFragment;
 
 
     public static CommunicationFragment getCommunicationFragment() {
@@ -109,5 +112,13 @@ public class FragmentManager {
 
     public static void setFragment8(Fragment8 fragment8) {
         FragmentManager.fragment8 = fragment8;
+    }
+
+    public static TenKeyFragment getTenKeyFragment() {
+        return tenKeyFragment;
+    }
+
+    public static void setTenKeyFragment(TenKeyFragment tenKeyFragment) {
+        FragmentManager.tenKeyFragment = tenKeyFragment;
     }
 }

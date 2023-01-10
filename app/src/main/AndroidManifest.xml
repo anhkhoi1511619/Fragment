@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Fragment_App"
         tools:targetApi="31">
         <activity
-            android:name=".TenkeyActivity"
+            android:name=".TenKeyActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

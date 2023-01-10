@@ -189,14 +189,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frame_tenkeyfragment"
-        android:name="com.example.fragment_app.View.Fragment.TenKeyFragment"
-        android:layout_width="600dp"
-        android:layout_height="460dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="300dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

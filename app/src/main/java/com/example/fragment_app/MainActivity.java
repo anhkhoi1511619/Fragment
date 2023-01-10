@@ -1,6 +1,5 @@
 package com.example.fragment_app;
 
-import static com.example.fragment_app.Manager.ConditionManager.createNewArrayFragment;
 import static com.example.fragment_app.Manager.ConditionManager.setRequestId;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +26,7 @@ import com.example.fragment_app.View.Fragment.Fragment7;
 import com.example.fragment_app.View.Fragment.Fragment8;
 import com.example.fragment_app.Manager.FragmentManager;
 import com.example.fragment_app.View.Fragment.OtherFragment;
+import com.example.fragment_app.View.Fragment.TenKeyFragment;
 import com.example.fragment_app.service.ServiceFloating;
 
 public class MainActivity extends AppCompatActivity {
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, getString(R.string.click4), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, TenkeyActivity.class);
+                Intent intent = new Intent(MainActivity.this, TenKeyActivity.class);
 //                Bundle bundle = new Bundle();
 //                List<ContactModel> mListUser = ContactModel.createContactsList(7);
 //                bundle.putSerializable(MY_REQUEST_CODE, mListUser);
@@ -229,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
         //
         OtherFragment otherFragment = (OtherFragment) fragmentManager.findFragmentById(R.id.frame_layout);
         CommunicationFragment communicationFragment = (CommunicationFragment) fragmentManager.findFragmentById(R.id.fm_test);
+        TenKeyFragment tenKeyFragment = (TenKeyFragment) fragmentManager.findFragmentById(R.id.frame_tenkeyfragment);
 
         FragmentManager.setFragment1(fragment1);
         FragmentManager.setFragment2(fragment2);
@@ -240,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager.setFragment8(fragment8);
         FragmentManager.setOtherFragment(otherFragment);
         FragmentManager.setCommunicationFragment(communicationFragment);
+        FragmentManager.setTenKeyFragment(tenKeyFragment);
 
     }
 
