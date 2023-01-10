@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, getString(R.string.click4), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, DataActivity.class);
+                Intent intent = new Intent(MainActivity.this, TenkeyActivity.class);
 //                Bundle bundle = new Bundle();
 //                List<ContactModel> mListUser = ContactModel.createContactsList(7);
 //                bundle.putSerializable(MY_REQUEST_CODE, mListUser);

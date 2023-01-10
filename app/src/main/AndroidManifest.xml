@@ -15,6 +15,13 @@
         android:theme="@style/Theme.Fragment_App"
         tools:targetApi="31">
         <activity
+            android:name=".TenkeyActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DataActivity"
             android:exported="false">
             <meta-data
@@ -34,6 +41,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <service
             android:name=".service.ServiceFloating"
             android:enabled="true"
